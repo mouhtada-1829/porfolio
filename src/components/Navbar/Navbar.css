@@ -53,6 +53,6 @@
 
 @media (max-width: 768px) {
   .navbar-links {
-    display: none; /* Nous ajouterons un menu mobile plus tard pour rester simple pour le moment */
+    display: none;
   }
 }

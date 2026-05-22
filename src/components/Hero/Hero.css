@@ -20,7 +20,7 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem); /* Taille adaptative */
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   line-height: 1.1;
   margin-bottom: var(--spacing-md);
   font-weight: 800;
@@ -65,13 +65,3 @@
   background: rgba(139, 92, 246, 0.1);
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}

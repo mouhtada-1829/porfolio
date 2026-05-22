@@ -1,6 +1,5 @@
 @import './styles/variables.css';
 
-/* Styles de base globaux */
 html, body {
   height: 100%;
   overflow-x: hidden;
@@ -22,11 +21,9 @@ ul {
   list-style: none;
 }
 
-/* Utilitaires pour le texte */
 .text-gradient {
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
 }
-

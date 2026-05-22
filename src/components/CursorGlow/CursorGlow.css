@@ -6,12 +6,10 @@
   height: 100vh;
   z-index: -1;
   background-color: #050811;
-  /* Fond très sombre pour faire ressortir la grille */
   overflow: hidden;
   pointer-events: none;
 }
 
-/* La Grille - Invisible par défaut, révélée par le masque */
 .grid-overlay {
   position: absolute;
   inset: 0;
@@ -19,36 +17,17 @@
     linear-gradient(to right, rgba(139, 92, 246, 0.3) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(139, 92, 246, 0.3) 1px, transparent 1px);
   background-size: 80px 80px;
-  transition: opacity 2s ease;
-  /* Transition lente pour l'assombrissement */
-
-  -webkit-mask-image: radial-gradient(circle 200px at var(--x) var(--y),
-      black 0%,
-      transparent 100%);
-  mask-image: radial-gradient(circle 400px at var(--x) var(--y),
-      black 0%,
-      transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 200px at var(--x) var(--y), black 0%, transparent 100%);
+  mask-image: radial-gradient(circle 400px at var(--x) var(--y), black 0%, transparent 100%);
 }
 
-/* La Lueur Mauve (Spotlight) */
 .cursor-glow {
   position: absolute;
   width: 800px;
   height: 500px;
-  background: radial-gradient(circle,
-      rgba(139, 92, 246, 0.15) 0%,
-      transparent 70%);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
   left: var(--x);
   top: var(--y);
   transform: translate(-50%, -50%);
-  pointer-events: none;
   filter: blur(80px);
-  transition: opacity 1s ease;
-}
-
-/* État quand la souris ne bouge plus */
-.is-idle .grid-overlay,
-.is-idle .cursor-glow {
-  opacity: 0.4;
-  /* Assombrissement à 40% de l'intensité initiale */
 }

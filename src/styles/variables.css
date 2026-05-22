@@ -1,18 +1,15 @@
 :root {
-  /* Palette de Couleurs (Cyber-Premium) */
-  --bg-color: #0f172a;        /* Bleu nuit très profond */
-  --surface-color: #1e293b;   /* Couleur des cartes et sections */
-  --primary-color: #8b5cf6;   /* Violet vibrant (Accent principal) */
-  --secondary-color: #0ea5e9; /* Bleu ciel (Accent secondaire / Cybersécurité) */
-  --text-main: #f8fafc;       /* Blanc cassé pour la lecture */
-  --text-muted: #94a3b8;      /* Gris bleuté pour le texte secondaire */
-  --accent-glow: rgba(139, 92, 246, 0.3); /* Effet de lueur pour le néon */
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --primary-color: #8b5cf6;
+  --secondary-color: #0ea5e9;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-glow: rgba(139, 92, 246, 0.3);
 
-  /* Typographie */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Fira Code', monospace; /* Pour le côté "Génie Logiciel" */
+  --font-mono: 'Fira Code', monospace;
 
-  /* Espacements et Bordures */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
@@ -22,12 +19,10 @@
   --transition-fast: 0.2s ease;
   --transition-slow: 0.5s ease;
 
-  /* Ombres et Effets */
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
-/* Reset de base pour utiliser ces variables */
 * {
   box-sizing: border-box;
   margin: 0;

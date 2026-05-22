@@ -24,7 +24,7 @@ const Experience = () => {
         </h2>
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <div key={index} className="timeline-item" style={{ '--i': index }}>
+            <div key={index} className="timeline-item">
               <div className="timeline-marker" />
               <div className="timeline-card">
                 <div className="timeline-header">
@@ -35,7 +35,7 @@ const Experience = () => {
                 <span className="timeline-period">{exp.period}</span>
                 <ul className="timeline-description">
                   {exp.description.map((item, i) => (
-                    <li key={i} style={{ '--j': i }}>{item}</li>
+                    <li key={i}>{item}</li>
                   ))}
                 </ul>
               </div>
