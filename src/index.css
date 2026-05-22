@@ -1,0 +1,32 @@
+@import './styles/variables.css';
+
+/* Styles de base globaux */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+/* Utilitaires pour le texte */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
