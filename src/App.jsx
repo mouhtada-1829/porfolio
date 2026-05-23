@@ -18,7 +18,7 @@ function App() {
       </main>
 
       <footer className="footer">
-        <p>© 2026 - Mouhamadou Mouhtada NDIAYE | Mentoré par Antigravity</p>
+        <p>© 2026 - Mouhamadou Mouhtada NDIAYE | Mentoré par OpenCode</p>
       </footer>
     </div>
   )
