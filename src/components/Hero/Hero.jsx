@@ -49,15 +49,15 @@ const Hero = () => {
           Passionné par <Typewriter texts={roles} />, je conçois des solutions web robustes et sécurisées pour répondre aux défis de demain.
         </p>
         <div className="hero-actions">
-          <a href="#projects" className="btn-primary">
+          <a href="#projects" className="btn btn-primary">
             Voir mes projets
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
-          <a href="/MouhamadouMouhtadaNdiaye-cv.pdf" className="btn-cv" download>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <a href="/MouhamadouMouhtadaNdiaye-cv.pdf" className="btn btn-outline btn-icon-left" download>
+            <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             CV
           </a>
-          <a href="#about" className="btn-secondary">
+          <a href="#about" className="btn btn-ghost">
             En savoir plus
           </a>
         </div>

@@ -61,12 +61,8 @@
   width: 100%;
 }
 
-.btn-contact {
-  background: linear-gradient(135deg, var(--primary-color), #6d28d9) !important;
-  color: white !important;
-  padding: 0.5rem 1.2rem !important;
-  border-radius: var(--radius-sm);
-  transition: transform var(--transition-spring), box-shadow var(--transition-fast) !important;
+.navbar-links .btn {
+  border-radius: 6px;
 }
 
 .btn-contact::after {

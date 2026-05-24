@@ -75,3 +75,181 @@ img {
   font-size: 1.1rem;
   line-height: 1.7;
 }
+
+/*
+ * === BUTTON SYSTEM (ribbit.dk inspired) ===
+ * Core: .btn with skew(-14deg) ::before background
+ * Variants: .btn-primary, .btn-outline, .btn-ghost
+ * Icon: .btn-icon with icon slides in from left/right
+ */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  background: none;
+  z-index: 1;
+  transition: padding 0.4s var(--ease-quart);
+  font-family: var(--font-main);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  transform: skew(-14deg);
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary::before {
+  background: linear-gradient(135deg, var(--primary-color), #6d28d9);
+}
+
+.btn-primary:hover {
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+}
+
+.btn-outline {
+  color: var(--primary-light);
+}
+
+.btn-outline::before {
+  border: 1.5px solid var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline:hover::before {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.btn-ghost::before {
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.btn-ghost:hover::before {
+  background: rgba(139, 92, 246, 0.18);
+}
+
+.btn .btn-icon {
+  display: inline-flex;
+  width: 1.1em;
+  height: 1.1em;
+  transition: transform 0.5s var(--ease-quart);
+}
+
+.btn .btn-icon-r {
+  transition: transform 0.5s var(--ease-quart), opacity 0.2s ease;
+}
+
+.btn:not(.btn-icon-left) .btn-icon:not(.btn-icon-r) {
+  margin-left: -0.3rem;
+  opacity: 0;
+  transform: translateX(-0.4rem);
+}
+
+.btn:not(.btn-icon-left):hover .btn-icon:not(.btn-icon-r) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn-icon-left .btn-icon {
+  margin-right: 0.3rem;
+  opacity: 0;
+  transform: translateX(-0.8rem);
+}
+
+.btn-icon-left:hover .btn-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*
+ * === ARROW BUTTON ===
+ */
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.25rem 0;
+  transition: color var(--transition-fast), gap var(--transition-smooth);
+}
+
+.btn-arrow::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.5s var(--ease-quart);
+  font-size: 1.1em;
+}
+
+.btn-arrow:hover {
+  color: var(--primary-color);
+  gap: 0.7rem;
+}
+
+.btn-arrow:hover::after {
+  transform: translate(3px, -2px);
+}
+
+/*
+ * === ANIMATION UTILITY CLASSES ===
+ * Inspired by ribbit.dk's generic animation system
+ */
+
+.anim-fade {
+  opacity: 0;
+  transition: opacity 1s ease-in-out var(--delay, 0s);
+}
+
+.anim-fade.in {
+  opacity: 1;
+}
+
+.anim-slide-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.4s ease-out var(--delay, 0s), transform 1.2s var(--ease-expo) var(--delay, 0s);
+}
+
+.anim-slide-up.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.4s ease-out var(--delay, 0s), transform 1.2s var(--ease-expo) var(--delay, 0s);
+}
+
+.anim-slide-right.in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.anim-zoom-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.4s ease-out var(--delay, 0s), transform 1.2s var(--ease-expo) var(--delay, 0s);
+}
+
+.anim-zoom-in.in {
+  opacity: 1;
+  transform: scale(1);
+}

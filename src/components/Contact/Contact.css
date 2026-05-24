@@ -102,36 +102,6 @@
   color: var(--text-muted);
 }
 
-.btn-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.9rem 2rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-  font-family: var(--font-main);
-}
-
-.btn-submit:hover {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 8px 30px var(--accent-glow);
-}
-
-.btn-submit svg {
-  transition: transform var(--transition-fast);
-}
-
-.btn-submit:hover svg {
-  transform: translateX(3px);
-}
-
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

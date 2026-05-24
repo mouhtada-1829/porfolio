@@ -24,7 +24,7 @@ const Navbar = () => {
           <li><a href="#experience" onClick={closeMenu}>Expérience</a></li>
           <li><a href="#skills" onClick={closeMenu}>Compétences</a></li>
           <li><a href="#projects" onClick={closeMenu}>Projets</a></li>
-          <li><a href="#contact" className="btn-contact" onClick={closeMenu}>Contact</a></li>
+          <li><a href="#contact" className="btn btn-primary" onClick={closeMenu} style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem', textTransform: 'none' }}>Contact</a></li>
         </ul>
       </div>
     </nav>
