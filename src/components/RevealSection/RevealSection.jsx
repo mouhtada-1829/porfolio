@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, createContext, useContext } from 'react';
 import './RevealSection.css';
+
+const RevealContext = createContext(false);
+
+export const useReveal = () => useContext(RevealContext);
 
 const useScrollReveal = (threshold = 0.1) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,17 +27,19 @@ const useScrollReveal = (threshold = 0.1) => {
   return [ref, isVisible];
 };
 
-const RevealSection = ({ children, id, className = '' }) => {
-  const [ref, isVisible] = useScrollReveal(0.1);
+const RevealSection = ({ children, id, className = '', animation = 'fade-up' }) => {
+  const [ref, isVisible] = useScrollReveal(0.05);
 
   return (
-    <section
-      id={id}
-      ref={ref}
-      className={`reveal-section ${isVisible ? 'is-visible' : ''} ${className}`}
-    >
-      {children}
-    </section>
+    <RevealContext.Provider value={isVisible}>
+      <section
+        id={id}
+        ref={ref}
+        className={`reveal-section reveal-${animation} ${isVisible ? 'is-visible' : ''} ${className}`}
+      >
+        {children}
+      </section>
+    </RevealContext.Provider>
   );
 };
 

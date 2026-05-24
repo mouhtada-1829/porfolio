@@ -1,67 +1,184 @@
 .hero {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  position: relative;
+  padding-top: calc(var(--spacing-xl) + 60px);
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 850px;
+  padding: 0 var(--spacing-md);
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  border-radius: 100px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--primary-light);
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
 }
 
 .hero-subtitle {
-  color: var(--secondary-color);
+  color: var(--text-muted);
   font-family: var(--font-mono);
-  font-size: 1.1rem;
-  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-xs);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  font-weight: 500;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1.1;
-  margin-bottom: var(--spacing-md);
-  font-weight: 800;
+  font-size: clamp(2.8rem, 10vw, 5rem);
+  line-height: 1.08;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--text-main) 40%, var(--primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--text-muted);
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto var(--spacing-lg);
+  line-height: 1.8;
+}
+
+.typewriter-text {
+  color: var(--secondary-light);
+  font-weight: 600;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 100;
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
 
 .hero-actions {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.btn-primary, .btn-secondary {
-  padding: 0.8rem 2rem;
+.btn-primary, .btn-secondary, .btn-cv {
+  padding: 0.85rem 2rem;
   border-radius: var(--radius-md);
   font-weight: 600;
-  transition: all var(--transition-fast);
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-spring);
+  cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), #6d28d9);
   color: white;
+  box-shadow: 0 4px 20px var(--accent-glow);
+  border: none;
 }
 
 .btn-primary:hover {
-  filter: brightness(1.1);
-  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px var(--accent-glow);
+}
+
+.btn-primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-cv {
+  border: 1px solid rgba(14, 165, 233, 0.4);
+  color: var(--secondary-light);
+  background: rgba(14, 165, 233, 0.05);
+}
+
+.btn-cv:hover {
+  background: rgba(14, 165, 233, 0.12);
+  border-color: var(--secondary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--accent-glow-secondary);
+}
+
+.btn-cv svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-cv:hover svg {
+  transform: translateY(2px);
 }
 
 .btn-secondary {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: var(--primary-light);
+  background: transparent;
 }
 
 .btn-secondary:hover {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.hero-scroll-indicator:hover {
+  opacity: 1;
+}
+
+.hero-scroll-text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--primary-color), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.2); }
 }
 

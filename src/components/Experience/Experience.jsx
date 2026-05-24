@@ -17,7 +17,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <RevealSection id="experience" className="experience">
+    <RevealSection id="experience" className="experience" animation="fade-right">
       <div className="experience-container">
         <h2 className="section-title">
           Expérience <span className="text-gradient">Professionnelle</span>
@@ -26,7 +26,7 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="timeline-item">
               <div className="timeline-marker" />
-              <div className="timeline-card">
+              <div className="timeline-card stagger-item">
                 <div className="timeline-header">
                   <h3 className="timeline-role">{exp.role}</h3>
                   <span className="timeline-company">{exp.company}</span>

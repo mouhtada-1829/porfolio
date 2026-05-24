@@ -9,7 +9,7 @@ const About = () => {
   ];
 
   return (
-    <RevealSection id="about" className="about">
+    <RevealSection id="about" className="about" animation="fade-left">
       <div className="about-container">
         <div className="about-image">
           <div className="image-placeholder">
@@ -28,7 +28,7 @@ const About = () => {
           </p>
           <div className="about-stats">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-item">
+              <div key={index} className="stat-item stagger-item">
                 <span className="stat-number">{stat.number}</span>
                 <span className="stat-label">{stat.label}</span>
               </div>

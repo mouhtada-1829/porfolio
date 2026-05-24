@@ -1,11 +1,18 @@
 :root {
-  --bg-color: #0f172a;
-  --surface-color: #1e293b;
+  --bg-color: #0a0c1a;
+  --bg-secondary: #0f1228;
+  --surface-color: #1a1e3a;
+  --surface-hover: #22284a;
   --primary-color: #8b5cf6;
+  --primary-light: #a78bfa;
   --secondary-color: #0ea5e9;
-  --text-main: #f8fafc;
+  --secondary-light: #38bdf8;
+  --accent: #f472b6;
+  --text-main: #f1f5f9;
   --text-muted: #94a3b8;
+  --text-dim: #64748b;
   --accent-glow: rgba(139, 92, 246, 0.3);
+  --accent-glow-secondary: rgba(14, 165, 233, 0.2);
 
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Fira Code', monospace;
@@ -14,13 +21,18 @@
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
   --radius-sm: 8px;
   --radius-md: 12px;
+  --radius-lg: 20px;
   --transition-fast: 0.2s ease;
   --transition-slow: 0.5s ease;
+  --transition-spring: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px var(--accent-glow);
 }
 
 * {
@@ -35,4 +47,5 @@ body {
   font-family: var(--font-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
