@@ -40,8 +40,8 @@ const Navbar = () => {
         </button>
         <ul className={`navbar-links ${menuOpen ? 'is-open' : ''}`}>
           <li><a href="#about" className={isActive('about')} onClick={closeMenu}>À propos</a></li>
-          <li><a href="#experience" className={isActive('experience')} onClick={closeMenu}>Expérience</a></li>
           <li><a href="#skills" className={isActive('skills')} onClick={closeMenu}>Compétences</a></li>
+          <li><a href="#experience" className={isActive('experience')} onClick={closeMenu}>Expérience</a></li>
           <li><a href="#projects" className={isActive('projects')} onClick={closeMenu}>Projets</a></li>
           <li><a href="#contact" className={`btn btn-primary ${isActive('contact')}`} onClick={closeMenu} style={{ padding: '0.5rem 1.2rem', fontSize: '0.85rem', textTransform: 'none' }}>Contact</a></li>
         </ul>
