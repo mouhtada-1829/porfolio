@@ -82,6 +82,8 @@
   background: rgba(139, 92, 246, 0.08);
   border-radius: var(--radius-sm);
   transition: background var(--transition-fast);
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .project-card:hover .project-folder-icon {

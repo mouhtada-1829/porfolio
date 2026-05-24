@@ -15,7 +15,7 @@
 }
 
 .stagger-dramatic {
-  transform: translateY(calc(40px * (1 - var(--_prog)))) scale(calc(0.88 + 0.12 * var(--_prog)));
+  transform: translateY(calc(40px * (1 - var(--_prog))));
 }
 
 /* ===== Glow line ===== */

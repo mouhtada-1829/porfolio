@@ -48,7 +48,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <RevealSection id="projects" className="projects" animation="flip">
+    <RevealSection id="projects" className="projects" animation="fade-up">
       <div className="projects-container">
         <h2 className="section-title">
           Mes <span className="text-gradient">Projets</span>
@@ -68,7 +68,7 @@ const Projects = () => {
             >
               <div className="project-card-header">
                 <div className="project-folder-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
                   </svg>
                 </div>
