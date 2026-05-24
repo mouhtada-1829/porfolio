@@ -28,7 +28,7 @@ const About = () => {
           </p>
           <div className="about-stats">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-item stagger-item">
+              <div key={index} className="stat-item stagger-item" style={{ '--s-index': index }}>
                 <span className="stat-number">{stat.number}</span>
                 <span className="stat-label">{stat.label}</span>
               </div>

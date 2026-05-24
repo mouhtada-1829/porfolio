@@ -64,7 +64,7 @@ const Projects = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="project-card stagger-dramatic"
-              style={{ '--accent': project.color }}
+              style={{ '--accent': project.color, '--s-index': idx }}
             >
               <div className="project-card-header">
                 <div className="project-folder-icon">

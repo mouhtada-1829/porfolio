@@ -1,46 +1,39 @@
-import { useEffect, useRef, useState, createContext, useContext } from 'react';
-import './RevealSection.css';
+import useScrollProgress from '../../hooks/useScrollProgress'
+import './RevealSection.css'
 
-const RevealContext = createContext(false);
-
-export const useReveal = () => useContext(RevealContext);
-
-const useScrollReveal = (threshold = 0.1) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          if (ref.current) observer.unobserve(ref.current);
-        }
-      },
-      { threshold }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [threshold]);
-
-  return [ref, isVisible];
-};
+const animStyles = {
+  'fade-up': (p) => ({
+    transform: `translateY(${60 * Math.max(0, 1 - p)}px)`
+  }),
+  'fade-left': (p) => ({
+    transform: `translateX(${-80 * Math.max(0, 1 - p)}px)`
+  }),
+  'fade-right': (p) => ({
+    transform: `translateX(${80 * Math.max(0, 1 - p)}px)`
+  }),
+  'zoom': (p) => ({
+    transform: `scale(${0.85 + 0.15 * Math.max(0, p)})`
+  }),
+  'flip': (p) => ({
+    transform: `perspective(800px) rotateX(${15 * Math.max(0, 1 - p)}deg)`,
+    transformOrigin: 'top center'
+  })
+}
 
 const RevealSection = ({ children, id, className = '', animation = 'fade-up' }) => {
-  const [ref, isVisible] = useScrollReveal(0.05);
+  const [ref, progress] = useScrollProgress()
+  const style = animStyles[animation]?.(progress) ?? {}
 
   return (
-    <RevealContext.Provider value={isVisible}>
-      <section
-        id={id}
-        ref={ref}
-        className={`reveal-section reveal-${animation} ${isVisible ? 'is-visible' : ''} ${className}`}
-      >
-        {children}
-      </section>
-    </RevealContext.Provider>
-  );
-};
+    <section
+      id={id}
+      ref={ref}
+      className={`reveal-section ${className}`}
+      style={style}
+    >
+      {children}
+    </section>
+  )
+}
 
-export default RevealSection;
+export default RevealSection

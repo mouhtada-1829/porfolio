@@ -3,124 +3,24 @@
   position: relative;
 }
 
-/* Default: fade-up */
-.reveal-fade-up {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+/* ===== Stagger items via --s-progress ===== */
+
+.stagger-item,
+.stagger-dramatic {
+  --_delay: calc(var(--s-index, 0) * 0.08);
+  --_raw: calc((var(--s-progress, 0) - var(--_delay)) / (1 - var(--_delay)));
+  --_prog: clamp(0, var(--_raw), 1);
+
+  transform: translateY(calc(30px * (1 - var(--_prog))));
 }
 
-.reveal-fade-up.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+.stagger-dramatic {
+  transform: translateY(calc(40px * (1 - var(--_prog)))) scale(calc(0.88 + 0.12 * var(--_prog)));
 }
 
-/* fade-left */
-.reveal-fade-left {
-  opacity: 0;
-  transform: translateX(-80px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* ===== Glow line ===== */
 
-.reveal-fade-left.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* fade-right */
-.reveal-fade-right {
-  opacity: 0;
-  transform: translateX(80px);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-fade-right.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* zoom */
-.reveal-zoom {
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-zoom.is-visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* flip-up */
-.reveal-flip {
-  opacity: 0;
-  transform: perspective(800px) rotateX(15deg);
-  transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.reveal-flip.is-visible {
-  opacity: 1;
-  transform: perspective(800px) rotateX(0deg);
-}
-
-/* Children stagger animation (subtle) */
-.reveal-section.is-visible > * {
-  animation: none;
-}
-
-.reveal-section.is-visible .stagger-item {
-  opacity: 0;
-  transform: translateY(30px);
-}
-
-.reveal-section.is-visible .stagger-item:nth-child(1) { animation: staggerFadeUp 0.6s 0.05s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(2) { animation: staggerFadeUp 0.6s 0.12s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(3) { animation: staggerFadeUp 0.6s 0.19s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(4) { animation: staggerFadeUp 0.6s 0.26s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(5) { animation: staggerFadeUp 0.6s 0.33s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(6) { animation: staggerFadeUp 0.6s 0.40s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(7) { animation: staggerFadeUp 0.6s 0.47s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(8) { animation: staggerFadeUp 0.6s 0.54s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(9) { animation: staggerFadeUp 0.6s 0.61s forwards; }
-.reveal-section.is-visible .stagger-item:nth-child(10) { animation: staggerFadeUp 0.6s 0.68s forwards; }
-
-@keyframes staggerFadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Dramatic stagger (slow-mo, blur-in) for WOW impact */
-.reveal-section.is-visible .stagger-dramatic {
-  opacity: 0;
-  transform: translateY(80px) scale(0.92);
-  filter: blur(6px);
-}
-
-.reveal-section.is-visible .stagger-dramatic:nth-child(1) { animation: staggerDramatic 1.6s 0.03s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(2) { animation: staggerDramatic 1.6s 0.10s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(3) { animation: staggerDramatic 1.6s 0.17s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(4) { animation: staggerDramatic 1.6s 0.24s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(5) { animation: staggerDramatic 1.6s 0.31s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(6) { animation: staggerDramatic 1.6s 0.38s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(7) { animation: staggerDramatic 1.6s 0.45s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(8) { animation: staggerDramatic 1.6s 0.52s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(9) { animation: staggerDramatic 1.6s 0.59s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(10) { animation: staggerDramatic 1.6s 0.66s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(11) { animation: staggerDramatic 1.6s 0.73s forwards; }
-.reveal-section.is-visible .stagger-dramatic:nth-child(12) { animation: staggerDramatic 1.6s 0.80s forwards; }
-
-@keyframes staggerDramatic {
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
-
-/* Pulse glow on visible */
-.reveal-section.is-visible::after {
+.reveal-section::after {
   content: '';
   position: absolute;
   top: 0;
@@ -128,12 +28,7 @@
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-  opacity: 0;
-  animation: glowLine 1.5s 0.3s forwards;
-}
-
-@keyframes glowLine {
-  to { opacity: 0.4; }
+  opacity: var(--s-progress, 0);
 }
 
 @media (max-width: 768px) {

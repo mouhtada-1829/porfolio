@@ -4,6 +4,32 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .stagger-item,
+  .stagger-dramatic {
+    transform: none !important;
+  }
+
+  .reveal-section::after {
+    opacity: 1 !important;
+  }
+
+  .skill-bar-fill {
+    width: var(--level) !important;
+  }
+}
+
 html, body {
   height: 100%;
   overflow-x: hidden;

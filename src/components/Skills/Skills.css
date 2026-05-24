@@ -22,7 +22,7 @@
   border: 1px solid rgba(139, 92, 246, 0.06);
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
-  transition: transform var(--transition-spring), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform 0.4s var(--ease-quart), border-color var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
   overflow: hidden;
 }

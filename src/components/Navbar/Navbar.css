@@ -53,11 +53,13 @@
   border-radius: 1px;
 }
 
-.navbar-links a:hover {
+.navbar-links a:hover,
+.navbar-links a.is-active {
   color: var(--text-main);
 }
 
-.navbar-links a:hover::after {
+.navbar-links a:hover::after,
+.navbar-links a.is-active::after {
   width: 100%;
 }
 
