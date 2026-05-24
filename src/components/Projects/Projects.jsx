@@ -63,7 +63,7 @@ const Projects = () => {
               href={`https://github.com/${project.repo}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="project-card stagger-item"
+              className="project-card stagger-dramatic"
               style={{ '--accent': project.color }}
             >
               <div className="project-card-header">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import RevealSection from '../RevealSection/RevealSection';
+import RevealSection, { useReveal } from '../RevealSection/RevealSection';
 import './Skills.css';
 
 const skillCategories = [
@@ -52,6 +52,7 @@ const skillCategories = [
 
 const SkillBar = ({ name, level }) => {
   const [hovered, setHovered] = useState(false);
+  const visible = useReveal();
 
   return (
     <div
@@ -65,7 +66,7 @@ const SkillBar = ({ name, level }) => {
       </div>
       <div className="skill-bar-track">
         <div
-          className={`skill-bar-fill ${hovered ? 'is-hovered' : ''}`}
+          className={`skill-bar-fill ${hovered ? 'is-hovered' : ''} ${visible ? 'is-visible' : ''}`}
           style={{ '--level': `${level}%` }}
         />
       </div>
