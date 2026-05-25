@@ -1,4 +1,4 @@
-.bg-layer {
+.bg-gradient {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,165 +7,29 @@
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-}
 
-/* ============================================
-   Option A — Floating Orbs
-   ============================================ */
-.bg-orbs {
-  background: #050811;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.65;
-}
-
-.orb-1 {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent 70%);
-  top: -15%;
-  left: -10%;
-  animation: floatOrb 20s ease-in-out infinite;
-}
-
-.orb-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.3), transparent 70%);
-  bottom: -10%;
-  right: -8%;
-  animation: floatOrb 24s ease-in-out infinite reverse;
-}
-
-.orb-3 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(244, 114, 182, 0.25), transparent 70%);
-  top: 35%;
-  left: 65%;
-  animation: floatOrb 18s ease-in-out infinite;
-  animation-delay: -6s;
-}
-
-.orb-4 {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent 70%);
-  top: 55%;
-  left: 10%;
-  animation: floatOrb 22s ease-in-out infinite reverse;
-  animation-delay: -10s;
-}
-
-@keyframes floatOrb {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(100px, -60px) scale(1.06); }
-  50% { transform: translate(-50px, 80px) scale(0.94); }
-  75% { transform: translate(60px, 40px) scale(1.03); }
-}
-
-/* ============================================
-   Option B — Soft Cursor Glow (no grid)
-   ============================================ */
-.bg-glow {
-  background: #050811;
-}
-
-.bg-glow::before {
-  content: '';
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.10) 0%, transparent 70%);
-  left: var(--x);
-  top: var(--y);
-  transform: translate(-50%, -50%);
-  filter: blur(100px);
-}
-
-.bg-glow::after {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
-  left: calc(var(--x) + 200px);
-  top: calc(var(--y) + 100px);
-  transform: translate(-50%, -50%);
-  filter: blur(80px);
-}
-
-/* ============================================
-   Option C — Static Gradient + Noise
-   ============================================ */
-.bg-gradient {
   background:
-    radial-gradient(ellipse 600px 400px at 20% 30%, rgba(139, 92, 246, 0.10), transparent 70%),
-    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(14, 165, 233, 0.07), transparent 70%),
-    radial-gradient(ellipse 300px 300px at 60% 20%, rgba(244, 114, 182, 0.05), transparent 70%),
-    linear-gradient(135deg, #050811 0%, #0a0c1a 50%, #0f1228 100%);
+    radial-gradient(ellipse 600px 400px at 25% 25%, rgba(124, 58, 237, 0.20), transparent 70%),
+    radial-gradient(ellipse 500px 500px at 75% 70%, rgba(245, 158, 11, 0.12), transparent 70%),
+    radial-gradient(ellipse 350px 350px at 55% 15%, rgba(192, 132, 252, 0.10), transparent 70%),
+    radial-gradient(ellipse 400px 400px at 15% 75%, rgba(245, 158, 11, 0.06), transparent 70%),
+    linear-gradient(135deg, #050811 0%, #0a0c1a 40%, #0f1228 100%);
+
+  animation: breathe 20s ease-in-out infinite;
 }
 
 .bg-gradient::before {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.35;
+  opacity: 0.45;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
   mix-blend-mode: overlay;
 }
 
-/* ============================================
-   Switcher UI (bottom-right)
-   ============================================ */
-.bg-switcher {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
-  display: flex;
-  gap: 6px;
-  background: rgba(15, 18, 40, 0.8);
-  backdrop-filter: blur(12px);
-  padding: 6px;
-  border-radius: 12px;
-  border: 1px solid rgba(139, 92, 246, 0.15);
-}
-
-.bg-switcher-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text-muted, #94a3b8);
-  font-family: var(--font-mono, monospace);
-  font-size: 13px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.bg-switcher-btn:hover {
-  color: var(--text-main, #f1f5f9);
-  background: rgba(139, 92, 246, 0.1);
-}
-
-.bg-switcher-btn.active {
-  background: rgba(139, 92, 246, 0.2);
-  color: var(--primary-color, #8b5cf6);
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.15);
-}
-
-.bg-switcher-label {
-  font-family: var(--font-main, system-ui, sans-serif);
-  font-size: 12px;
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.92; }
 }

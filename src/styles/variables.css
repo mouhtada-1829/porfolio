@@ -1,18 +1,20 @@
 :root {
   --bg-color: #0a0c1a;
   --bg-secondary: #0f1228;
-  --surface-color: #1a1e3a;
-  --surface-hover: #22284a;
-  --primary-color: #8b5cf6;
-  --primary-light: #a78bfa;
+  --surface-color: #1e2248;
+  --surface-hover: #262e58;
+  --primary-color: #7c3aed;
+  --primary-light: #c084fc;
   --secondary-color: #0ea5e9;
   --secondary-light: #38bdf8;
+  --amber: #f59e0b;
+  --amber-light: #fbbf24;
   --accent: #f472b6;
   --text-main: #f1f5f9;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  --accent-glow: rgba(139, 92, 246, 0.3);
-  --accent-glow-secondary: rgba(14, 165, 233, 0.2);
+  --accent-glow: rgba(124, 58, 237, 0.5);
+  --accent-glow-secondary: rgba(245, 158, 11, 0.25);
 
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'Fira Code', monospace;

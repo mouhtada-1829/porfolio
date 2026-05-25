@@ -24,14 +24,14 @@
   background: var(--surface-color);
   padding: var(--spacing-sm);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.08);
   transition: border-color var(--transition-fast), transform 0.4s var(--ease-quart), box-shadow var(--transition-fast);
 }
 
 .contact-info-card:hover {
-  border-color: rgba(139, 92, 246, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
   transform: translateX(6px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
 }
 
 .contact-info-icon {
@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(124, 58, 237, 0.12);
   border-radius: var(--radius-sm);
   color: var(--primary-color);
   flex-shrink: 0;
@@ -94,7 +94,7 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px var(--accent-glow);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.3), 0 0 20px rgba(124, 58, 237, 0.1);
 }
 
 .contact-form input::placeholder,

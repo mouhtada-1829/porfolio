@@ -12,7 +12,7 @@
 
 .project-card {
   background: var(--surface-color);
-  border: 1px solid rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--spacing-sm);
   transition: transform 0.4s var(--ease-quart), border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--accent, var(--primary-color)), var(--secondary-color));
+  background: linear-gradient(90deg, var(--primary-color), var(--amber));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-slow);
@@ -55,8 +55,8 @@
 
 .project-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(139, 92, 246, 0.2);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 40px var(--accent-glow);
 }
 
 .project-card:hover::after {
@@ -79,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(139, 92, 246, 0.08);
+  background: rgba(124, 58, 237, 0.1);
   border-radius: var(--radius-sm);
   transition: background var(--transition-fast);
   overflow: hidden;
@@ -87,7 +87,7 @@
 }
 
 .project-card:hover .project-folder-icon {
-  background: rgba(139, 92, 246, 0.15);
+  background: rgba(124, 58, 237, 0.18);
 }
 
 .project-external-icon {
@@ -142,18 +142,44 @@
 .project-tag {
   font-size: 0.7rem;
   font-family: var(--font-mono);
-  color: var(--secondary-light);
-  background: rgba(14, 165, 233, 0.08);
   padding: 0.25rem 0.7rem;
   border-radius: 100px;
-  border: 1px solid rgba(14, 165, 233, 0.1);
   transition: all var(--transition-fast);
   letter-spacing: 0.3px;
 }
 
+.project-tag {
+  color: var(--secondary-light);
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.1);
+}
+
+.project-tag.is-amber {
+  color: var(--amber-light, #fbbf24);
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.1);
+}
+
+.project-tag.is-purple {
+  color: var(--primary-light, #c084fc);
+  background: rgba(124, 58, 237, 0.08);
+  border-color: rgba(124, 58, 237, 0.1);
+}
+
+.project-tag.is-green {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.1);
+}
+
+.project-tag.is-red {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.1);
+}
+
 .project-card:hover .project-tag {
-  background: rgba(14, 165, 233, 0.12);
-  border-color: rgba(14, 165, 233, 0.2);
+  filter: brightness(1.2);
 }
 
 @media (max-width: 768px) {

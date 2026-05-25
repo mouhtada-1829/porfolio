@@ -21,7 +21,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to bottom, var(--primary-color), var(--amber, #f59e0b));
 }
 
 .timeline-item {
@@ -33,19 +33,19 @@
   position: absolute;
   left: -2rem;
   top: 0.5rem;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--amber, #f59e0b));
   border: 3px solid var(--bg-color);
   transform: translateX(-50%);
-  box-shadow: 0 0 15px var(--accent-glow), 0 0 30px var(--accent-glow-secondary);
+  box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow-secondary);
   z-index: 1;
 }
 
 .timeline-card {
   background: var(--surface-color);
-  border: 1px solid rgba(139, 92, 246, 0.06);
+  border: 1px solid rgba(124, 58, 237, 0.08);
   border-radius: var(--radius-lg);
   padding: var(--spacing-md);
   transition: transform 0.4s var(--ease-quart), border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -72,8 +72,8 @@
 
 .timeline-card:hover {
   transform: translateX(8px) translateY(-3px);
-  border-color: rgba(139, 92, 246, 0.2);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 30px var(--accent-glow);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 40px var(--accent-glow);
 }
 
 .timeline-header {
@@ -106,10 +106,10 @@
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: var(--secondary-color);
+  color: var(--amber-light, #fbbf24);
   margin-bottom: var(--spacing-sm);
   padding: 0.2rem 0.6rem;
-  background: rgba(14, 165, 233, 0.1);
+  background: rgba(245, 158, 11, 0.1);
   border-radius: var(--radius-sm);
 }
 

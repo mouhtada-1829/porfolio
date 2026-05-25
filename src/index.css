@@ -58,7 +58,7 @@ img {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--amber, #f59e0b));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -157,15 +157,15 @@ img {
 }
 
 .btn-outline:hover::before {
-  background: rgba(139, 92, 246, 0.08);
+  background: rgba(124, 58, 237, 0.1);
 }
 
 .btn-ghost::before {
-  background: rgba(139, 92, 246, 0.1);
+  background: rgba(124, 58, 237, 0.12);
 }
 
 .btn-ghost:hover::before {
-  background: rgba(139, 92, 246, 0.18);
+  background: rgba(124, 58, 237, 0.2);
 }
 
 .btn .btn-icon {
