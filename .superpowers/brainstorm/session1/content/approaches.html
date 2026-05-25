@@ -1,0 +1,44 @@
+<h2>3 approches pour le fond d'écran</h2>
+<p class="subtitle">Je veux remplacer la grille violette qui suit la souris par quelque chose de plus doux</p>
+
+<div class="cards" style="margin-top: 1.5rem;">
+  <div class="card" data-choice="orbs" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:120px;background:linear-gradient(135deg,#0a0c1a,#1a1e3a);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.3),transparent 70%);left:20%;top:30%;filter:blur(20px);"></div>
+      <div style="position:absolute;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,0.2),transparent 70%);right:25%;top:20%;filter:blur(25px);"></div>
+      <div style="position:absolute;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle,rgba(244,114,182,0.2),transparent 70%);left:50%;bottom:15%;filter:blur(15px);"></div>
+      <span style="color:rgba(255,255,255,0.3);font-size:2rem;z-index:1;">✦</span>
+    </div>
+    <div class="card-body">
+      <h3>A 🌸 Orbes flottantes</h3>
+      <p>3-5 bulles de couleur floues qui flottent doucement (CSS pur). Aucun JS, très léger. Donne une atmosphère douce et rêveuse.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="glow" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:120px;background:linear-gradient(135deg,#0a0c1a,#1a1e3a);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.12),transparent 70%);filter:blur(60px);transition:all 0.3s;"></div>
+      <span style="color:rgba(139,92,246,0.4);font-size:1.2rem;z-index:1;">⊙ douce</span>
+    </div>
+    <div class="card-body">
+      <h3>B ✨ Lueur douce au curseur</h3>
+      <p>Version épurée : plus de grille, juste une lueur large et très douce qui suit la souris. Subtile, élégante, garde l'interaction.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="noise" onclick="toggleSelect(this)">
+    <div class="card-image" style="height:120px;background:linear-gradient(135deg,#0a0c1a,#0f1228 40%,#1a1e3a);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;inset:0;opacity:0.03;background:url('data:image/svg+xml,...') repeat;"></div>
+      <div style="position:absolute;width:100%;height:100%;background:radial-gradient(ellipse at 30% 50%,rgba(139,92,246,0.08),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(14,165,233,0.06),transparent 60%);"></div>
+      <span style="color:rgba(255,255,255,0.3);font-size:1.2rem;z-index:1;">≈ grain</span>
+    </div>
+    <div class="card-body">
+      <h3>C 🌌 Gradient + texture</h3>
+      <p>Fond gradient statique sophistiqué + texture grain subtile. Premium, très "design", zéro JS. Parfait si tu veux du propre sans distraction.</p>
+    </div>
+  </div>
+</div>
+
+<div class="pros-cons" style="margin-top: 1rem;">
+  <div class="pros"><h4>⚠️ Info</h4><ul><li>Toutes les options sont <strong>très légères</strong> comparées à la grille actuelle</li><li>L'option A et C sont 100% CSS, zéro JavaScript</li><li>L'option B garde le même JS mais sans la grille lourde</li></ul></div>
+</div>
