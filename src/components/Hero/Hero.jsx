@@ -46,10 +46,6 @@ export function Hero() {
             Voir la démo
             <Icon name="arrowDown" size={16} />
           </a>
-          <a className="btn btn--ghost" href={profile.cv} download>
-            Télécharger le CV
-            <Icon name="download" size={16} />
-          </a>
         </div>
       </div>
     </section>

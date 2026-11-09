@@ -69,10 +69,6 @@ export function Contact() {
         </ul>
 
         <div className="contact__foot">
-          <a className="btn" href={profile.cv} download>
-            Télécharger le CV
-            <Icon name="download" size={16} />
-          </a>
           <p className="contact__meta mono">
             {profile.location} · {profile.year}
           </p>

@@ -62,24 +62,6 @@
   color: var(--ink);
 }
 
-.rail__cv {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 160ms ease;
-}
-
-.rail__cv:hover {
-  color: var(--ink);
-}
-
 .rail__toggle {
   display: none;
   width: 44px;
@@ -154,10 +136,6 @@
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1;
-}
-
-.menu__cv {
-  margin-top: var(--space-7);
 }
 
 .menu__meta {

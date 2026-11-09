@@ -140,11 +140,6 @@ export function NavRail() {
         <nav className="rail__nav" aria-label="Sections">
           <NavLinks active={current} />
         </nav>
-
-        <a className="rail__cv" href={profile.cv} download>
-          <Icon name="download" size={16} />
-          <span>CV — PDF</span>
-        </a>
       </aside>
 
       {open ? (
@@ -172,11 +167,6 @@ export function NavRail() {
           <nav aria-label="Sections">
             <NavLinks active={current} onNavigate={closeMenu} />
           </nav>
-
-          <a className="btn menu__cv" href={profile.cv} download>
-            <Icon name="download" size={16} />
-            Télécharger le CV
-          </a>
 
           <p className="menu__meta mono">
             {profile.location} · {profile.year}

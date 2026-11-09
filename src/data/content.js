@@ -12,7 +12,6 @@ export const profile = {
   linkedinLabel: "linkedin.com/in/mouhamadou-mouhtada-ndiaye-5b5bb3344",
   github: "https://github.com/mouhtada-1829",
   githubLabel: "github.com/mouhtada-1829",
-  cv: "/cv/mouhamadou-mouhtada-ndiaye-cv.pdf",
 };
 
 export const nav = [
@@ -96,36 +95,36 @@ export const flagship = {
       id: "demo",
       title: "Démo produit",
       duration: "3:01",
-      src: "/media/senguichet/senguichet-demo.mp4",
+      src: "media/senguichet/senguichet-demo.mp4",
       type: "video/mp4",
-      poster: "/media/senguichet/maquettes/p00_image.jpg",
-      download: "/media/senguichet/senguichet-demo.mp4",
+      poster: "media/senguichet/maquettes/p00_image.jpg",
+      download: "media/senguichet/senguichet-demo.mp4",
       label: "Démonstration de Senguichet : parcours d'achat, paiement et validation d'un billet.",
     },
     {
       id: "mobile",
       title: "Présentation mobile",
       duration: "10:30",
-      src: "/media/senguichet/senguichet-mobile.mp4",
+      src: "media/senguichet/senguichet-mobile.mp4",
       type: "video/mp4",
-      poster: "/media/senguichet/maquettes/p02_image.jpg",
-      download: "/media/senguichet/senguichet-mobile.mp4",
+      poster: "media/senguichet/maquettes/p02_image.jpg",
+      download: "media/senguichet/senguichet-mobile.mp4",
       label: "Présentation de l'application mobile Senguichet et de ses écrans.",
     },
   ],
   mockups: [
     {
-      src: "/media/senguichet/maquettes/senguichet-detail.jpg",
+      src: "media/senguichet/maquettes/senguichet-detail.jpg",
       alt: "Écran de détail d'un événement avec le prix du billet et l'action d'achat.",
       align: "left",
     },
     {
-      src: "/media/senguichet/maquettes/senguichet-paiement.jpg",
+      src: "media/senguichet/maquettes/senguichet-paiement.jpg",
       alt: "Écran de paiement mobile avec les options Wave, Orange Money et Free Money.",
       align: "right",
     },
     {
-      src: "/media/senguichet/maquettes/senguichet-smart-ticket.jpg",
+      src: "media/senguichet/maquettes/senguichet-smart-ticket.jpg",
       alt: "Smart Ticket avec un code de validation unique et le mode hors-ligne.",
       align: "left",
     },
