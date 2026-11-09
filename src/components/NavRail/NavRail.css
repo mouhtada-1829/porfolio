@@ -160,8 +160,7 @@
     border-bottom: 1px solid var(--line);
   }
 
-  .rail__nav,
-  .rail__cv {
+  .rail__nav {
     display: none;
   }
 

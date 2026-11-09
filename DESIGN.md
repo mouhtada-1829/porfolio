@@ -124,14 +124,14 @@ The portfolio is a relay rack: a lacquered paper enclosure, an engraved nameplat
 
 The palette is deliberately narrow: paper, ink, one signal amber, and one validated green. There is no violet, no glow, no gradient text, and no skill bar. Depth comes from 1px rules, tonal paper, and two full-bleed charcoal panels reserved for the security and contact arguments. The system is flat by default and physical where it matters: a nameplate with screws, ports that light when a project is linked, a pulse that crosses the circuit once.
 
-The motion grammar is one authored moment, not a layer of entrances. The amber pulse crosses the Senguichet circuit on load; after that, the interface answers the pointer and the keyboard and then stays still. Real evidence leads: the product demo, the mobile presentation, the design mockups labeled as design mockups, the eight certificates, the two timelines. Nothing is presented as proof unless it is traceable.
+The motion grammar is one authored moment, not a layer of entrances. The amber pulse crosses the Senguichet circuit on load, lighting each port in sequence and settling the readout; after that, the interface answers the pointer and the keyboard and then stays still. Real evidence leads: the product demo, the mobile demo, the eight certificates, the two timelines. Nothing is presented as proof unless it is traceable.
 
 **Key Characteristics:**
 - Paper and charcoal, two grounds, no third.
 - Amber as signal, never as body text.
 - 1px rules, engraved labels, and a 200px rail that maps the page.
 - One authored motion: the amber pulse across the Senguichet circuit.
-- Real demos and real links; design mockups are labeled as design mockups.
+- Real demos and real links.
 - One section per screen; equal left and right edges.
 
 ## Colors
@@ -151,7 +151,7 @@ One accent carries the signal, one validates it, and the rest is paper and ink. 
 - **Charcoal Ink (#1b1d1a):** primary text, primary buttons, and the full-bleed Cybersécurité, Contact, and Footer panels.
 - **Graphite (#4a4c46):** secondary text, project descriptions, spec labels.
 - **Rule Wire (#b9b3a4):** 1px dividers and ledger rules.
-- **Strong Rule Wire (#8e887a):** borders that need to hold weight — nameplate, media frames, mockup frames.
+- **Strong Rule Wire (#8e887a):** borders that need to hold weight — nameplate and media frames.
 - **Amber Wash (#e9c9a8):** text selection only; it never becomes a surface.
 
 ### Named Rules
@@ -190,14 +190,14 @@ The page is a rack, not a stack of cards. A fixed 200px rail on desktop is the m
 - A 200px rail is fixed at ≥901px; `#main` and the footer shift by the rail. Below 901px the rail becomes a 64px topbar with a full-screen menu dialog.
 - Shell 1360px, gutter clamp(20px, 4vw, 56px). `.wrap` is the single left/right edge for every section; no section escapes the line.
 - Hero: 100svh, flex column centered; nameplate, availability, circuit, actions. All other sections: min-height 100svh, flex column centered, padding-block clamp(72px, 10vh, 112px).
-- Section grids: Senguichet main 0.95fr/1.05fr, secondary 0.9fr/1.1fr, mockups 3 columns max 640px; certifications 2 columns; security 4 columns; journey 2 columns; contact a single column of full-width rows.
+- Section grids: Senguichet main 0.95fr/1.05fr, secondary a centered portrait demo max 420px; certifications 2 columns; security 4 columns; journey 2 columns; contact a single column of full-width rows.
 - Breakpoints: 1150px (hero name steps down), 900px (rail to topbar/menu), 800px (journey to one column), 700px (circuit to vertical), 600px (hero compacts, buttons full width), 520px (certification tags hide).
 - Spacing rhythm: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96.
 
 ### Named Rules
 **The One-Ground-Per-Screen Rule.** Each section is a room. No second heading, no next panel, peeks into the current screen at 1440×900.
 
-**The Rail Is the Map Rule.** The rail lists the five destinations and the CV. It is the only index; no decorative section numbers elsewhere.
+**The Rail Is the Map Rule.** The rail lists the five destinations. It is the only index; no decorative section numbers elsewhere.
 
 **The Equal Edges Rule.** Every block begins and ends on the `.wrap` lines or the grid columns. Nothing is allowed to hang off one side.
 
@@ -216,7 +216,7 @@ Flat by default. Depth is drawn with 1px rules, tonal paper, and two full-bleed 
 
 ## Shapes
 
-Nearly square. The system uses a 2px radius for every panel, button, tag, video frame, and mockup frame; circles are reserved for ports, LEDs, and timeline nodes. Borders are 1px; the only strong borders are the nameplate and the media frames.
+Nearly square. The system uses a 2px radius for every panel, button, tag, and video frame; circles are reserved for ports, LEDs, and timeline nodes. Borders are 1px; the only strong borders are the nameplate and the media frames.
 
 ### Named Rule
 **The 2px Rule.** 2px on surfaces. 999px only on status LEDs, circuit ports, and timeline nodes. No large rounded cards.
@@ -236,7 +236,7 @@ Nearly square. The system uses a 2px radius for every panel, button, tag, video 
 Raised paper, 1px strong rule, 2px radius, four 7px screw heads, plate shadow. The h1 is the name; the role and school sit below in mono. No eyebrow above the h1.
 
 ### Rail / Navigation
-Fixed 200px paper rail, 1px rule on the right; brand bolt in amber; five links in Archivo 0.9rem, ink-soft, hover/active ink; `aria-current="location"`. The CV download sits at the bottom. Mobile: 64px topbar, 44px menu button, full-screen dialog with focus trap, Escape, and scroll lock.
+Fixed 200px paper rail, 1px rule on the right; brand bolt in amber; five links in Archivo 0.9rem, ink-soft, hover/active ink; `aria-current="location"`. Mobile: 64px topbar, 44px menu button, full-screen dialog with focus trap, Escape, and scroll lock.
 
 ### Project Ledger Row
 A row, not a card: 1px rules, an 8px port at the left, the name in title, the description in graphite, stack/tag in mono, an arrow at the right. Hover/focus: paper-raised ground, amber port, arrow shifts 2px. A private project is a static row: no hover, no arrow, tag "Stage · code privé".
@@ -251,13 +251,13 @@ Charcoal panel, 8px green-soft LED, title in display, one-sentence lead, mono li
 1px vertical rule, 11px node (the first is amber), mono period, title, organization, details. Experience and Formation are two columns at ≥801px and one column below.
 
 ### Contact Line
-Charcoal panel, three full-width rows: email, LinkedIn, GitHub; icon, mono label, display value, arrow. Hover: rgba paper 0.06; focus: paper outline. No form and no phone; the CV is one click.
+Charcoal panel, three full-width rows: email, LinkedIn, GitHub; icon, mono label, display value, arrow. Hover: rgba paper 0.06; focus: paper outline. No form and no phone.
 
 ### Video Frame
-Caption above, never below: title, duration, download. 16:9 charcoal frame, `object-fit: contain`, real poster, `preload="none"`. Design mockups are labeled "Maquettes de conception — extraites de la présentation mobile" above the 3-up portrait strip; they are never presented as production screenshots.
+Caption above, never below: title, duration, download. Charcoal frame, `object-fit: contain`, `preload="none"`. The product demo uses a 16:9 frame; the mobile demo uses a `--portrait` modifier at the video's native 576 × 1248 ratio and caps at 420px wide, so no fake phone chrome is added. The mobile demo is never presented as a production screenshot.
 
 ### Named Rule
-**The Evidence Rule.** Every visual is either the real product or a labeled design mockup. No stock photo, no invented screenshot, no fake verification link.
+**The Evidence Rule.** Every visual is the real product recorded in use. No stock photo, no invented screenshot, no fake verification link.
 
 ## Do's and Don'ts
 
@@ -268,15 +268,15 @@ Caption above, never below: title, duration, download. 16:9 charcoal frame, `obj
 - **Do** use 1px rules to structure; the rail, the circuit, and the ledger rows carry the world.
 - **Do** keep two grounds: paper and charcoal. Use charcoal only for the security and contact arguments.
 - **Do** keep one authored motion: the amber pulse that crosses the Senguichet circuit once.
-- **Do** label design mockups as design mockups; use the real demo and mobile presentation.
-- **Do** keep the CV and contact one action away.
+- **Do** use the real product demo and mobile demo; never fake a capture.
+- **Do** keep contact one action away.
 
 ### Don't:
 - **Don't** use violet or lavender anywhere, including the favicon.
 - **Don't** use glow, colored halos, or gradient text.
 - **Don't** use skill bars, percentages, or progress rings; certifications are validated lines.
 - **Don't** use emoji or Unicode glyphs as icons; use the inline SVG set.
-- **Don't** present a design mockup as a live screenshot.
+- **Don't** present a recording as a static screenshot.
 - **Don't** invent years, verification links, repos, projects, or claims.
 - **Don't** add a contact form without a backend; use the honest mailto.
 - **Don't** use large rounded cards or nested cards; the ledger rows and panels are the structure.

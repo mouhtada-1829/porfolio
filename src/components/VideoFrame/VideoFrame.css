@@ -62,6 +62,10 @@
   border-color: var(--line-strong);
 }
 
+.video--portrait .video__frame {
+  aspect-ratio: 576 / 1248;
+}
+
 .video__fallback {
   display: grid;
   height: 100%;

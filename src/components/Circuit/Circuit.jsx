@@ -17,7 +17,7 @@ export function Circuit() {
           const isActive = index === active;
 
           return (
-            <li className="circuit__node" key={item.id}>
+            <li className="circuit__node" key={item.id} style={{ "--i": index }}>
               <button
                 className={`circuit__button${isActive ? " is-active" : ""}`}
                 type="button"
@@ -37,8 +37,12 @@ export function Circuit() {
       </ol>
 
       <p className="circuit__readout" id="circuit-readout" aria-live="polite">
-        <span className="circuit__readout-index mono">{node.index}</span>
-        <span>{node.detail}</span>
+        <span className="circuit__readout-index mono" key={`index-${node.id}`}>
+          {node.index}
+        </span>
+        <span className="circuit__readout-text" key={node.id}>
+          {node.detail}
+        </span>
       </p>
     </div>
   );

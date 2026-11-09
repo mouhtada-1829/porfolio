@@ -119,7 +119,7 @@
       "kind": "button",
       "refersTo": "button-ghost",
       "description": "The second action: paper ground, ink label, strong rule; inverts on hover.",
-      "html": "<button class='ds-btn-ghost'>Télécharger le CV</button>",
+      "html": "<button class='ds-btn-ghost'>Discuter du projet</button>",
       "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: .6rem; min-height: 46px; padding: .8rem 1.15rem; border: 1px solid var(--line-strong); border-radius: 2px; background: transparent; color: var(--ink); font-family: var(--font-mono); font-size: .78rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; cursor: pointer; transition: transform .2s var(--ease-out), background-color .2s var(--ease-out), color .2s var(--ease-out), border-color .2s var(--ease-out); } .ds-btn-ghost:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); color: var(--paper); } .ds-btn-ghost:active { transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }"
     },
     {
@@ -172,19 +172,19 @@
       "name": "Contact Line",
       "kind": "custom",
       "description": "One full-width contact row on charcoal: icon, mono label, display value, arrow.",
-      "html": "<a class='ds-contact-link' href='mailto:mouhamadoumouhtada.ndiaye@esp.sn'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' aria-hidden='true'><rect x='3' y='5' width='18' height='14' rx='1'/><path d='M3 7l9 6 9-6'/></svg><span><span class='ds-contact-link__label'>Email</span><span class='ds-contact-link__value'>mouhamadoumouhtada.ndiaye@esp.sn</span></span><span class='ds-contact-link__arrow' aria-hidden='true'>→</span></a>",
+      "html": "<a class='ds-contact-link' href='mailto:mouhamadoumouhtada.ndiaye@gmail.com'><svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.6' aria-hidden='true'><rect x='3' y='5' width='18' height='14' rx='1'/><path d='M3 7l9 6 9-6'/></svg><span><span class='ds-contact-link__label'>Email</span><span class='ds-contact-link__value'>mouhamadoumouhtada.ndiaye@gmail.com</span></span><span class='ds-contact-link__arrow' aria-hidden='true'>→</span></a>",
       "css": ".ds-contact-link { display: grid; grid-template-columns: 24px 1fr auto; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid rgba(232,228,219,.16); color: var(--paper); text-decoration: none; transition: background-color .2s var(--ease-out); } .ds-contact-link:hover { background: rgba(232,228,219,.06); } .ds-contact-link:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; } .ds-contact-link__label { display: block; color: rgba(232,228,219,.6); font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; } .ds-contact-link__value { display: block; color: var(--paper); font-family: var(--font-display); font-size: 1.02rem; line-height: 1.35; } .ds-contact-link__arrow { color: var(--paper-3); }"
     }
   ],
   "narrative": {
     "northStar": "La salle des relais",
-    "overview": "The portfolio is a relay rack: a lacquered paper enclosure, an engraved nameplate, labeled ports, 1px wiring, and a single signal lamp that travels the circuit. The interface is not the subject. The work is. Every section is a panel on the same rack, so a recruiter can trace Senguichet from the mobile app to payment to validation before reading a biography.\n\nThe palette is deliberately narrow: paper, ink, one signal amber, and one validated green. There is no violet, no glow, no gradient text, and no skill bar. Depth comes from 1px rules, tonal paper, and two full-bleed charcoal panels reserved for the security and contact arguments. The system is flat by default and physical where it matters: a nameplate with screws, ports that light when a project is linked, a pulse that crosses the circuit once.\n\nThe motion grammar is one authored moment, not a layer of entrances. The amber pulse crosses the Senguichet circuit on load; after that, the interface answers the pointer and the keyboard and then stays still. Real evidence leads: the product demo, the mobile presentation, the design mockups labeled as design mockups, the eight certificates, the two timelines. Nothing is presented as proof unless it is traceable.",
+    "overview": "The portfolio is a relay rack: a lacquered paper enclosure, an engraved nameplate, labeled ports, 1px wiring, and a single signal lamp that travels the circuit. The interface is not the subject. The work is. Every section is a panel on the same rack, so a recruiter can trace Senguichet from the mobile app to payment to validation before reading a biography.\n\nThe palette is deliberately narrow: paper, ink, one signal amber, and one validated green. There is no violet, no glow, no gradient text, and no skill bar. Depth comes from 1px rules, tonal paper, and two full-bleed charcoal panels reserved for the security and contact arguments. The system is flat by default and physical where it matters: a nameplate with screws, ports that light when a project is linked, a pulse that crosses the circuit once.\n\nThe motion grammar is one authored moment, not a layer of entrances. The amber pulse crosses the Senguichet circuit on load; after that, the interface answers the pointer and the keyboard and then stays still. Real evidence leads: the product demo, the mobile demo, the eight certificates, the two timelines. Nothing is presented as proof unless it is traceable.",
     "keyCharacteristics": [
       "Paper and charcoal, two grounds, no third.",
       "Amber as signal, never as body text.",
       "1px rules, engraved labels, and a 200px rail that maps the page.",
       "One authored motion: the amber pulse across the Senguichet circuit.",
-      "Real demos and real links; design mockups are labeled as design mockups.",
+      "Real demos and real links.",
       "One section per screen; equal left and right edges."
     ],
     "rules": [
@@ -225,7 +225,7 @@
       },
       {
         "name": "The Rail Is the Map Rule",
-        "body": "The rail lists the five destinations and the CV. It is the only index; no decorative section numbers elsewhere.",
+        "body": "The rail lists the five destinations. It is the only index; no decorative section numbers elsewhere.",
         "section": "layout"
       },
       {
@@ -245,7 +245,7 @@
       },
       {
         "name": "The Evidence Rule",
-        "body": "Every visual is either the real product or a labeled design mockup. No stock photo, no invented screenshot, no fake verification link.",
+        "body": "Every visual is the real product recorded in use. No stock photo, no invented screenshot, no fake verification link.",
         "section": "components"
       }
     ],
@@ -256,15 +256,15 @@
       "Do use 1px rules to structure; the rail, the circuit, and the ledger rows carry the world.",
       "Do keep two grounds: paper and charcoal. Use charcoal only for the security and contact arguments.",
       "Do keep one authored motion: the amber pulse that crosses the Senguichet circuit once.",
-      "Do label design mockups as design mockups; use the real demo and mobile presentation.",
-      "Do keep the CV and contact one action away."
+      "Do use the real product demo and mobile demo; never fake a capture.",
+      "Do keep contact one action away."
     ],
     "donts": [
       "Don't use violet or lavender anywhere, including the favicon.",
       "Don't use glow, colored halos, or gradient text.",
       "Don't use skill bars, percentages, or progress rings; certifications are validated lines.",
       "Don't use emoji or Unicode glyphs as icons; use the inline SVG set.",
-      "Don't present a design mockup as a live screenshot.",
+      "Don't present a recording as a static screenshot.",
       "Don't invent years, verification links, repos, projects, or claims.",
       "Don't add a contact form without a backend; use the honest mailto.",
       "Don't use large rounded cards or nested cards; the ledger rows and panels are the structure.",

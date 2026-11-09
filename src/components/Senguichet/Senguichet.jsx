@@ -57,36 +57,7 @@ export function Senguichet() {
 
         <div className="senguichet__secondary">
           <div className="senguichet__mobile">
-            <VideoFrame video={mobile} />
-          </div>
-
-          <div className="senguichet__mockups">
-            <p className="label senguichet__mockups-label">
-              Maquettes de conception — extraites de la présentation mobile
-            </p>
-            <ul className="mockups">
-              {flagship.mockups.map((mockup) => (
-                <li key={mockup.src}>
-                  <a
-                    className="mockup"
-                    href={mockup.src}
-                    target="_blank"
-                    rel="noreferrer"
-                    data-align={mockup.align}
-                    aria-label={`Ouvrir la maquette en grand : ${mockup.alt}`}
-                  >
-                    <img
-                      className="mockup__image"
-                      src={mockup.src}
-                      alt={mockup.alt}
-                      loading="lazy"
-                      width="1920"
-                      height="1080"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <VideoFrame video={mobile} portrait />
           </div>
         </div>
 

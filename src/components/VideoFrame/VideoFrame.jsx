@@ -2,13 +2,19 @@ import { useId, useState } from "react";
 import { Icon } from "../Icon/Icon";
 import "./VideoFrame.css";
 
-export function VideoFrame({ video, featured = false }) {
+export function VideoFrame({ video, featured = false, portrait = false }) {
   const [failed, setFailed] = useState(false);
   const titleId = useId();
+  const modifiers = [
+    featured ? "video--featured" : "",
+    portrait ? "video--portrait" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <figure
-      className={`video${featured ? " video--featured" : ""}`}
+      className={`video${modifiers ? ` ${modifiers}` : ""}`}
       aria-labelledby={titleId}
     >
       <figcaption className="video__head">
@@ -38,7 +44,6 @@ export function VideoFrame({ video, featured = false }) {
             controls
             preload="none"
             playsInline
-            poster={video.poster}
             aria-label={video.label}
             onError={() => setFailed(true)}
           >

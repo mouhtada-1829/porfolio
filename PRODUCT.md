@@ -12,7 +12,7 @@ Recruteurs, responsables techniques et maîtres de stage qui évaluent Mouhamado
 
 ## Product Purpose
 
-Portfolio personnel one-page de Mouhamadou Mouhtada NDIAYE, élève ingénieur en Génie Logiciel (ESP Dakar) formé aussi en cybersécurité. Il existe pour prouver, par du travail réel, une double compétence : concevoir et développer un logiciel de bout en bout, puis le sécuriser. Succès : le recruteur comprend le positionnement, regarde la démo Senguichet, télécharge le CV et contacte.
+Portfolio personnel one-page de Mouhamadou Mouhtada NDIAYE, élève ingénieur en Génie Logiciel (ESP Dakar) formé aussi en cybersécurité. Il existe pour prouver, par du travail réel, une double compétence : concevoir et développer un logiciel de bout en bout, puis le sécuriser. Succès : le recruteur comprend le positionnement, regarde la démo Senguichet et contacte.
 
 ## Positioning
 
@@ -20,7 +20,7 @@ Un élève ingénieur qui livre des produits logiciels complets et pense sécuri
 
 ## Operating Context
 
-Les visiteurs consultent le site sur desktop et mobile, depuis un lien de CV, LinkedIn ou GitHub. Ils cherchent : le profil, des projets avec liens/démos, les certifications, le parcours, et un moyen de contact direct (email, LinkedIn, GitHub). Le CV PDF est l'artefact de référence à télécharger depuis le site.
+Les visiteurs consultent le site sur desktop et mobile, depuis un lien de CV, LinkedIn ou GitHub. Ils cherchent : le profil, des projets avec liens/démos, les certifications, le parcours, et un moyen de contact direct (email, LinkedIn, GitHub). Le téléchargement du CV est retiré du site tant que le PDF n'est pas régénéré avec le profil actuel ; le contact direct reste la sortie.
 
 ## Capabilities and Constraints
 
@@ -28,14 +28,13 @@ One-page éditorial en français. Stack existante : React 19 + Vite + CSS pur, s
 
 ## Brand Commitments
 
-Nom complet : Mouhamadou Mouhtada NDIAYE. Voix : français sobre, précis, sans hype. Le favicon existant est un éclair violet (#863bff) ; le violet est interdit dans la nouvelle direction visuelle par la règle taste, donc le traitement de la marque (monochrome ou recoloré) sera décidé avec l'utilisateur, sans réinventer le nom. Liens : email mouhamadoumouhtada.ndiaye@esp.sn, LinkedIn linkedin.com/in/mouhamadou-mouhtada-ndiaye-5b5bb3344, GitHub github.com/mouhtada-1829.
+Nom complet : Mouhamadou Mouhtada NDIAYE. Voix : français sobre, précis, sans hype. Le favicon existant est un éclair violet (#863bff) ; le violet est interdit dans la nouvelle direction visuelle par la règle taste, donc le traitement de la marque (monochrome ou recoloré) sera décidé avec l'utilisateur, sans réinventer le nom. Liens : email mouhamadoumouhtada.ndiaye@gmail.com, LinkedIn linkedin.com/in/mouhamadou-mouhtada-ndiaye-5b5bb3344, GitHub github.com/mouhtada-1829.
 
 ## Evidence on Hand
 
-- CV PDF : `C:\Users\muham\Downloads\Mouhamadou_Mouhtada_NDIAYE_CV.pdf`
-- Démo Senguichet : `C:\Users\muham\Downloads\Rapport de.mp4` (3:01, 1080p, 39 Mo)
-- Présentation de l'application mobile : `C:\Users\muham\Downloads\video_demo.MOV` (10:30, 416p, 83 Mo) — second média, à afficher comme « présentation mobile complète » après la démo courte
-- Maquettes mobiles Senguichet : `C:\Users\muham\Downloads\Maquettes Mobiles SENGUICHET.pdf` (13 slides ; écrans liste d'événements, paiement Wave/Orange Money, création d'événement)
+- Démo produit : `public/media/senguichet/senguichet-demo.mp4` (3:01, 1280×720)
+- Démo mobile : `public/media/senguichet/senguichet-mobile.mp4` (1:59, 576×1248, portrait) — remplace l'ancienne présentation mobile longue
+- CV PDF : retiré du site (obsolète) ; à régénérer avant réintégration
 - Logo/favicon : `public\favicon.svg` (éclair violet)
 - Projets/données du CV : Senguichet / Sen Digital Pulse (billetterie dématérialisée multi-organisateurs, web + mobile, paiements locaux), Groupe COREX (gestion et traçabilité des affectations de matériel), TranspoBot, SenSanté, KHINTS, gestion de bibliothèque, Sudoku.
 - Certifications : Python Essentials (Cisco), Introduction to Data Science (Cisco), Intelligence Artificielle pour tous (FORCE-N), Introduction to Cybersecurity (Cisco), Google Cybersecurity (Coursera), Certified Cybersecurity Foundations (Hackviser), The Network Technician Career Path (Cisco), IBM Software Engineering (Coursera).
@@ -46,7 +45,7 @@ Nom complet : Mouhamadou Mouhtada NDIAYE. Voix : français sobre, précis, sans 
 1. La preuve avant le discours : montrer le produit et le travail, pas des barres de compétences.
 2. Génie logiciel d'abord, cybersécurité comme profondeur : un seul positionnement lisible.
 3. Chaque affirmation est vérifiable : projet, rôle, lien, certification.
-4. Le CV et le contact à une action de distance.
+4. Le contact à une action de distance.
 5. Sobre, rapide, accessible : la finition fait la crédibilité.
 
 ## Accessibility & Inclusion
