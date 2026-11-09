@@ -1,0 +1,145 @@
+{
+  "title": "Choisis la direction visuelle",
+  "question": "Le portfolio sera construit autour d'un seul monde visuel. La salle des relais est la direction proposée ; le registre de billetterie est l'alternative la plus proche de Senguichet. Trois autres pistes sont défendables, trois sont écartées.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "La salle des relais",
+      "kicker": "THE ROLL",
+      "lineage": "central téléphonique, baies de brassage, étiquettes gravées",
+      "thesis": "Une baie de brassage : chaque projet est un circuit suivi de bout en bout, chaque certification une ligne validée.",
+      "palette": ["#E8E4DB", "#1B1D1A", "#C8751A", "#2F6B4F"],
+      "materials": ["acier laqué", "étiquettes gravées", "câblage lacé", "cartes de schéma"],
+      "viewport": "Une large baie technique : plaque de nom, bandeau d'état, circuit Senguichet déjà tracé (mobile → API → backend → paiement → validation) ; boutons gravés « Voir la démo » et « Télécharger le CV ».",
+      "risk": "Une baie peut devenir un costume si les labels sont décoratifs ; la lisibilité et une action claire priment.",
+      "raised": [
+        {
+          "from": "challenger-riley",
+          "raise": "La densité de lignes gravées encode l'état d'un port, sans ajouter de couleur."
+        },
+        {
+          "from": "challenger-akari",
+          "raise": "L'état est une lumière : un port s'allume au survol, le détail se déplie depuis une étiquette à plat."
+        },
+        {
+          "from": "challenger-drums",
+          "raise": "Un témoin avance le long du circuit actif pour dire où l'on est dans l'architecture et dans la page."
+        }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Le registre de billetterie",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "carnet de tickets et registre de délivrance",
+      "thesis": "Chaque projet est un ticket numéroté, validé et détachable ; le portfolio est le registre de ce qui a été livré.",
+      "palette": ["#F2EDE3", "#171717", "#C0392B", "#2F5D50", "#C9A227"],
+      "materials": ["papier de sécurité", "perforations", "tampons", "encre"],
+      "viewport": "Un grand registre ouvert : nom et positionnement en tête, premier ticket Senguichet avec sa démo, autres tickets empilés ; CV en un clic.",
+      "risk": "Le littéral peut devenir gadget si tout est ticket ; garder une lecture éditoriale et des preuves réelles."
+    },
+    {
+      "id": "challenger-botanical",
+      "kind": "challenger",
+      "catalogId": "editorial-sequence-montage-botanical-folio-season",
+      "label": "Le folio botanique",
+      "verdict": "competitive",
+      "lineage": "planches botaniques à échelle fixe",
+      "thesis": "Chaque projet est une planche à la même échelle, sur un même sol, avec son stade de maturité.",
+      "palette": ["#F3EBDD", "#6B4A2F", "#3E6B3A", "#A3261F"],
+      "materials": ["gravure", "papier crème", "filets sepia"],
+      "viewport": "Cinq planches alignées sur une ligne de base ; la plus récente ouverte en grand.",
+      "risk": "Peut sentir l'herbier décoratif si les projets ne sont pas traités comme des spécimens techniques.",
+      "case": "Gagne en clarté comparative ; perd en identification pour un recruteur logiciel."
+    },
+    {
+      "id": "challenger-deepdive",
+      "kind": "challenger",
+      "catalogId": "rivers-tides-ocean-depths-mesophotic-deep-dive",
+      "label": "La plongée mesophotique",
+      "verdict": "competitive",
+      "lineage": "profil de plongée technique",
+      "thesis": "La page descend par profondeur : surface, couche, récif, mur, remontée ; la cybersécurité devient une profondeur.",
+      "palette": ["#071A2B", "#0E4A5C", "#7FD3E0", "#E8F1F2"],
+      "materials": ["lumière filtrée", "particules", "papier de plongée"],
+      "viewport": "Un axe vertical de profondeur structure la page ; la surface montre le premier projet.",
+      "risk": "La métaphore peut noyer le contenu si chaque section devient une scène.",
+      "case": "Gagne en clarté narrative (profondeur = sécurité) ; identification recruteur moyenne."
+    },
+    {
+      "id": "challenger-onebit",
+      "kind": "challenger",
+      "catalogId": "medium-native-one-bit-desktop",
+      "label": "Le bureau 1-bit",
+      "verdict": "competitive",
+      "lineage": "bureau Macintosh 1-bit",
+      "thesis": "Un bureau logiciel en noir et blanc : chaque projet est une fenêtre, chaque preuve un document.",
+      "palette": ["#000000", "#FFFFFF", "#808080"],
+      "materials": ["pixels", "trames ordonnées", "chrome 1px"],
+      "viewport": "Un bureau en recouvrement ; la fenêtre Senguichet ouverte au premier plan, le CV dans le tiroir.",
+      "risk": "Peut lire rétro-nostalgie et réduire la lisibilité si les fenêtres s'empilent.",
+      "case": "Gagne en identification logicielle ; perd en clarté pour un recruteur non technique."
+    },
+    {
+      "id": "challenger-riley",
+      "kind": "challenger",
+      "catalogId": "design-canon-riley-moire-gallery",
+      "label": "La galerie moiré",
+      "verdict": "declined",
+      "lineage": "galerie optique noir et blanc",
+      "thesis": "Des toiles d'ondes noir et blanc qui vibrent à la distance du regard.",
+      "palette": ["#000000", "#FFFFFF"],
+      "materials": ["peinture mate", "lignes", "optique"],
+      "viewport": "Un mur blanc, une seule toile d'ondes plein cadre.",
+      "risk": "Beau mais muet pour un recruteur : l'art ne dit pas la compétence.",
+      "kept": "La fréquence de lignes comme signal, sans couleur ajoutée."
+    },
+    {
+      "id": "challenger-akari",
+      "kind": "challenger",
+      "catalogId": "paper-folds-pleats-deployable-akari-light-sculpture",
+      "label": "L'atelier Akari",
+      "verdict": "declined",
+      "lineage": "sculptures de lumière en washi",
+      "thesis": "Des volumes de papier qui s'allument et se replient.",
+      "palette": ["#F4EBDD", "#C9A46A", "#2B2A28", "#B23A2A"],
+      "materials": ["washi", "bambou", "lumière chaude"],
+      "viewport": "Une pièce sombre, des volumes suspendus qui s'allument au passage.",
+      "risk": "Trop artisanal pour un poste d'ingénieur ; la chaleur peut diluer la rigueur.",
+      "kept": "L'état est une lumière : le survol allume, le reste se replie à plat."
+    },
+    {
+      "id": "challenger-drums",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-drum-machine-step-row",
+      "label": "La barre de pas",
+      "verdict": "declined",
+      "lineage": "boîte à rythmes 16 pas",
+      "thesis": "Seize pas, une lumière qui tourne, des motifs qu'on arme.",
+      "palette": ["#2B2B2B", "#D64545", "#E08A2E", "#E8C547", "#F2F2F2"],
+      "materials": ["panneau charbon", "touches", "LED"],
+      "viewport": "Une rangée de seize touches traversant la page, une lumière qui balaie.",
+      "risk": "Jouet pour un portfolio ; la métaphore musicale ne porte pas la sécurité.",
+      "kept": "Un témoin qui avance pour dire où l'on est dans le temps ou le parcours."
+    }
+  ],
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "Le standard de la catégorie",
+    "thesis": "Ce que ce type de portfolio livre, exécuté impeccablement.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["grille propre", "photos produit", "typographie éditoriale"],
+    "viewport": "Un hero sobre, une rangée de projets, un CV en un clic.",
+    "risk": "Indistinguable de la concurrence par construction."
+  },
+  "reroll": {
+    "registers": ["safer", "bolder"]
+  },
+  "buildPath": {
+    "value": "code"
+  },
+  "steer": true
+}

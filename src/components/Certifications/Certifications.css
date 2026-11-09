@@ -1,0 +1,122 @@
+.certifications__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.certifications__heading {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.certifications__count {
+  flex: none;
+  color: var(--green);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.cert-group {
+  padding: 20px 32px 0 0;
+}
+
+.cert-group + .cert-group {
+  padding-right: 0;
+  padding-left: 32px;
+  border-left: 1px solid var(--line);
+}
+
+.cert-group__title {
+  margin-bottom: 6px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cert {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cert__check {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  color: var(--green);
+}
+
+.cert__main {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.cert__name {
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.cert__issuer {
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+}
+
+.cert__tag {
+  color: var(--green);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .certifications__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  .certifications__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-group {
+    padding: 20px 0 0;
+  }
+
+  .cert-group + .cert-group {
+    margin-top: 28px;
+    padding-top: 20px;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .cert__tag {
+    display: none;
+  }
+}

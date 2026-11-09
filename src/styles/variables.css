@@ -1,61 +1,46 @@
 :root {
-  --bg-color: #0a0c1a;
-  --bg-secondary: #0f1228;
-  --surface-color: #1e2248;
-  --surface-hover: #262e58;
-  --primary-color: #7c3aed;
-  --primary-light: #c084fc;
-  --secondary-color: #0ea5e9;
-  --secondary-light: #38bdf8;
-  --amber: #f59e0b;
-  --amber-light: #fbbf24;
-  --accent: #f472b6;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
-  --text-dim: #64748b;
-  --accent-glow: rgba(124, 58, 237, 0.5);
-  --accent-glow-secondary: rgba(245, 158, 11, 0.25);
+  color-scheme: light;
 
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --paper: #e8e4db;
+  --paper-2: #f2efe8;
+  --paper-3: #ddd8cc;
 
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 6rem;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --ease-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
-  --ease-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --ease-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --ease-quart: cubic-bezier(0.25, 1, 0.5, 1);
-  --ease-expo: cubic-bezier(0.87, 0, 0.13, 1);
-  --ease-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ink: #1b1d1a;
+  --ink-soft: #4a4c46;
+  --ink-faint: #6e7069;
 
-  --transition-fast: 0.2s ease;
-  --transition-slow: 0.5s ease;
-  --transition-spring: 0.4s var(--ease-back);
-  --transition-smooth: 0.6s var(--ease-quart);
+  --line: #b9b3a4;
+  --line-strong: #8e887a;
 
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
-  --shadow-glow: 0 0 30px var(--accent-glow);
-}
+  --amber: #c8751a;
+  --amber-soft: #e9c9a8;
+  --green: #2f6b4f;
+  --green-soft: #c9d9cf;
+  --red: #a33a2a;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  --font-display: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, 'SFMono-Regular', monospace;
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: var(--font-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --radius: 2px;
+  --shadow: 0 1px 2px rgba(27, 29, 26, 0.08), 0 18px 40px -24px rgba(27, 29, 26, 0.35);
+  --shadow-lift: 0 2px 4px rgba(27, 29, 26, 0.1), 0 24px 48px -24px rgba(27, 29, 26, 0.42);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --shell: 1360px;
+  --rail: 200px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --header-h: 64px;
+  --section-y: clamp(72px, 10vh, 112px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
 }

@@ -1,69 +1,57 @@
-import { useState, useEffect } from 'react';
-import RevealSection from '../RevealSection/RevealSection';
-import './Hero.css';
+import { Icon } from "../Icon/Icon";
+import { Circuit } from "../Circuit/Circuit";
+import { flagship, profile } from "../../data/content";
+import "./Hero.css";
 
-const roles = ['Génie Logiciel', 'Cybersécurité'];
-const Typewriter = ({ texts }) => {
-  const [display, setDisplay] = useState('');
-  const [index, setIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = texts[index];
-    let timeout;
-
-    if (!deleting && charIndex < current.length) {
-      timeout = setTimeout(() => {
-        setDisplay(current.slice(0, charIndex + 1));
-        setCharIndex(charIndex + 1);
-      }, 80);
-    } else if (!deleting && charIndex === current.length) {
-      timeout = setTimeout(() => setDeleting(true), 2000);
-    } else if (deleting && charIndex > 0) {
-      timeout = setTimeout(() => {
-        setDisplay(current.slice(0, charIndex - 1));
-        setCharIndex(charIndex - 1);
-      }, 40);
-    } else if (deleting && charIndex === 0) {
-      setDeleting(false);
-      setIndex((i) => (i + 1) % texts.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [charIndex, deleting, index, texts]);
-
-  return <span className="typewriter-text">{display}<span className="typewriter-cursor">|</span></span>;
-};
-
-const Hero = () => {
+export function Hero() {
   return (
-    <RevealSection id="home" className="hero">
-      <div className="hero-content">
-        <div className="hero-badge">Portfolio — Étudiant Ingénieur</div>
-        <h2 className="hero-subtitle">Bonjour, je suis</h2>
-        <h1 className="hero-title">
-          Mouhamadou Mouhtada <span className="text-gradient">NDIAYE</span>
-        </h1>
-        <p className="hero-description">
-          Passionné par <Typewriter texts={roles} />, je conçois des solutions web robustes et sécurisées pour répondre aux défis de demain.
-        </p>
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">
-            Voir mes projets
-            <svg className="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    <section className="hero" id="top" aria-labelledby="hero-title">
+      <div className="wrap hero__inner">
+        <div className="hero__top">
+          <div className="hero__plate">
+            <h1 className="hero__name" id="hero-title">
+              <span>{profile.firstName}</span>
+              <span>{profile.lastName}</span>
+            </h1>
+            <p className="hero__role">{profile.role}</p>
+            <p className="hero__school mono">{profile.school}</p>
+            <span className="hero__screw hero__screw--tl" aria-hidden="true" />
+            <span className="hero__screw hero__screw--tr" aria-hidden="true" />
+            <span className="hero__screw hero__screw--bl" aria-hidden="true" />
+            <span className="hero__screw hero__screw--br" aria-hidden="true" />
+          </div>
+
+          <div className="hero__status">
+            <span className="hero__badge">
+              <span className="status-led" aria-hidden="true" />
+              {profile.availability}
+            </span>
+            <span className="hero__place mono">
+              {profile.location} · {profile.year}
+            </span>
+          </div>
+        </div>
+
+        <div className="hero__circuit">
+          <div className="hero__circuit-head">
+            <span className="label">Senguichet — circuit produit</span>
+            <span className="hero__circuit-line mono">Du paiement à la validation</span>
+          </div>
+          <Circuit />
+          <p className="hero__flag mono">{flagship.kicker}</p>
+        </div>
+
+        <div className="hero__actions">
+          <a className="btn" href="#senguichet">
+            Voir la démo
+            <Icon name="arrowDown" size={16} />
           </a>
-          <a href="#about" className="btn btn-ghost">
-            En savoir plus
+          <a className="btn btn--ghost" href={profile.cv} download>
+            Télécharger le CV
+            <Icon name="download" size={16} />
           </a>
         </div>
       </div>
-      <div className="hero-scroll-indicator">
-        <span className="hero-scroll-text">Scroll</span>
-        <div className="hero-scroll-line" />
-      </div>
-    </RevealSection>
+    </section>
   );
-};
-
-export default Hero;
+}

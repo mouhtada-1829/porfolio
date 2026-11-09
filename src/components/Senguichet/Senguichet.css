@@ -1,0 +1,224 @@
+.senguichet__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.senguichet__heading {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.senguichet__status {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--green);
+  border-radius: var(--radius);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.senguichet__main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: start;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.senguichet__story {
+  display: grid;
+  gap: 20px;
+}
+
+.senguichet__context {
+  max-width: 58ch;
+  color: var(--ink);
+  font-size: clamp(1.02rem, 1.3vw, 1.12rem);
+  line-height: 1.6;
+}
+
+.senguichet__role {
+  max-width: 58ch;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.spec {
+  border-top: 1px solid var(--line);
+}
+
+.spec__row {
+  display: grid;
+  grid-template-columns: 12ch minmax(0, 1fr);
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.spec__row dt {
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.spec__row dd {
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.senguichet__scope {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  padding-top: 4px;
+}
+
+.senguichet__scope li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.senguichet__scope svg {
+  flex: none;
+  margin-top: 1px;
+  color: var(--green);
+}
+
+.senguichet__secondary {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: clamp(32px, 5vh, 56px);
+  padding-top: clamp(24px, 4vh, 40px);
+  border-top: 1px solid var(--line);
+}
+
+.senguichet__mockups {
+  display: grid;
+  gap: 12px;
+}
+
+.senguichet__mockups-label {
+  color: var(--ink-soft);
+}
+
+.mockups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  max-width: 640px;
+}
+
+.mockup {
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease;
+}
+
+.mockup:hover {
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.mockup__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% center;
+  transition: transform 220ms ease;
+}
+
+.mockup[data-align="left"] .mockup__image {
+  object-position: 0% center;
+}
+
+.mockup[data-align="right"] .mockup__image {
+  object-position: 100% center;
+}
+
+.mockup:hover .mockup__image {
+  transform: scale(1.02);
+}
+
+.senguichet__foot {
+  margin-top: clamp(28px, 4vh, 44px);
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.senguichet__contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.senguichet__contact svg {
+  transition: transform 160ms ease;
+}
+
+.senguichet__contact:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1100px) {
+  .senguichet__secondary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .senguichet__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .senguichet__main {
+    grid-template-columns: 1fr;
+  }
+
+  .senguichet__demo {
+    order: -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .spec__row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .senguichet__scope {
+    grid-template-columns: 1fr;
+  }
+
+  .senguichet__status {
+    white-space: normal;
+  }
+}
