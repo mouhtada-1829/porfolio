@@ -53,6 +53,19 @@
     border-color 160ms ease;
 }
 
+.project__link::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 12px;
+  width: 1px;
+  background: var(--amber);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 180ms var(--ease-out);
+}
+
 .project__link:hover,
 .project__link:focus-visible {
   background: var(--paper-2);
@@ -64,12 +77,21 @@
   background: var(--amber);
 }
 
+.project__link:hover::after,
+.project__link:focus-visible::after {
+  transform: scaleY(1);
+}
+
 .project__link--static {
   cursor: default;
 }
 
 .project__link--static:hover {
   background: transparent;
+}
+
+.project__link--static::after {
+  display: none;
 }
 
 .project__link--static:hover::before {

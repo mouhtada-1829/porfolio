@@ -42,6 +42,7 @@
 
 .layer__led {
   color: var(--green-soft);
+  --lamp-delay: calc(var(--i, 0) * 180ms);
 }
 
 .layer__title {

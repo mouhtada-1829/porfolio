@@ -4,7 +4,7 @@
 
 .circuit__track {
   position: absolute;
-  top: 5px;
+  top: 0;
   left: 5.5px;
   width: 80%;
   height: 1px;
@@ -25,7 +25,7 @@
 
 @keyframes circuit-pulse {
   0% {
-    left: 0;
+    transform: translateX(0);
     opacity: 0;
   }
 
@@ -38,7 +38,7 @@
   }
 
   100% {
-    left: calc(100% - 6px);
+    transform: translateX(var(--pulse-travel, 0px));
     opacity: 0;
   }
 }
@@ -51,7 +51,18 @@
 }
 
 .circuit__node {
+  position: relative;
   min-width: 0;
+}
+
+.circuit__node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 1px;
+  height: 8px;
+  background: var(--line-strong);
 }
 
 .circuit__button {
@@ -59,13 +70,13 @@
   display: grid;
   gap: 2px;
   width: 100%;
-  padding: 20px 10px 0 0;
+  padding: 22px 10px 0 0;
   text-align: left;
 }
 
 .circuit__port {
   position: absolute;
-  top: 0;
+  top: 8px;
   left: 0;
   width: 11px;
   height: 11px;
@@ -127,6 +138,21 @@
   background: var(--amber);
 }
 
+.circuit__button.is-active .circuit__port {
+  animation: port-live 3200ms var(--ease-in-out) infinite;
+}
+
+@keyframes port-live {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.14);
+  }
+}
+
 .circuit__readout {
   display: flex;
   gap: 12px;
@@ -170,6 +196,10 @@
 
   .circuit__nodes {
     grid-template-columns: 1fr;
+  }
+
+  .circuit__node::before {
+    display: none;
   }
 
   .circuit__nodes::before {
@@ -219,6 +249,7 @@
   }
 
   .circuit__port,
+  .circuit__button.is-active .circuit__port,
   .circuit__readout-index,
   .circuit__readout-text {
     animation: none;

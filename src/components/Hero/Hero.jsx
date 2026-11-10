@@ -23,7 +23,7 @@ export function Hero() {
 
           <div className="hero__status">
             <span className="hero__badge">
-              <span className="status-led" aria-hidden="true" />
+              <span className="status-led is-live" aria-hidden="true" />
               {profile.availability}
             </span>
             <span className="hero__place mono">
@@ -32,7 +32,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero__circuit">
+        <div className="hero__console">
           <div className="hero__circuit-head">
             <span className="label">Senguichet — circuit produit</span>
             <span className="hero__circuit-line mono">Du paiement à la validation</span>

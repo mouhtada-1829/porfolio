@@ -21,7 +21,7 @@ export function Senguichet() {
             <p className="lede">{flagship.title}</p>
           </div>
           <span className="senguichet__status">
-            <span className="status-led" aria-hidden="true" />
+            <span className="status-led is-live" aria-hidden="true" />
             {flagship.status} · {flagship.year}
           </span>
         </div>

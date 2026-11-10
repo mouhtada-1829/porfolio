@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Icon } from "../Icon/Icon";
 import { nav, profile } from "../../data/content";
 import { useActiveSection } from "../../hooks/useActiveSection";
@@ -20,20 +20,21 @@ function Brand({ onNavigate, label }) {
   );
 }
 
-function NavLinks({ active, onNavigate }) {
+function NavLinks({ active, onNavigate, ports = false }) {
   return (
     <ul className="rail__list">
-      {nav.map((item) => {
+      {nav.map((item, index) => {
         const isActive = active === item.id;
 
         return (
-          <li key={item.id}>
+          <li key={item.id} style={{ "--i": index }}>
             <a
               className={`rail__link${isActive ? " is-active" : ""}`}
               href={`#${item.id}`}
               aria-current={isActive ? "location" : undefined}
               onClick={onNavigate}
             >
+              {ports ? <span className="rail__port" aria-hidden="true" /> : null}
               <span className="rail__label">{item.label}</span>
             </a>
           </li>
@@ -47,10 +48,80 @@ export function NavRail() {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
+  const navRef = useRef(null);
   const active = useActiveSection(SECTION_IDS);
   const current = active === "senguichet" ? "projets" : active;
 
   const closeMenu = () => setOpen(false);
+
+  const syncMarker = useCallback(() => {
+    const navEl = navRef.current;
+
+    if (!navEl) {
+      return;
+    }
+
+    const link = navEl.querySelector(".rail__link.is-active");
+
+    if (!link) {
+      navEl.classList.remove("has-active");
+      return;
+    }
+
+    navEl.style.setProperty(
+      "--marker-y",
+      `${link.offsetTop + link.offsetHeight / 2}px`
+    );
+    navEl.classList.add("has-active");
+  }, []);
+
+  useLayoutEffect(() => {
+    syncMarker();
+  }, [current, syncMarker]);
+
+  useEffect(() => {
+    const navEl = navRef.current;
+
+    if (!navEl) {
+      return undefined;
+    }
+
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const max =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress =
+        max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
+
+      navEl.style.setProperty("--progress", progress.toFixed(4));
+    };
+
+    const handleScroll = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(update);
+      }
+    };
+
+    const handleResize = () => {
+      syncMarker();
+      update();
+    };
+
+    update();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+    };
+  }, [syncMarker]);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 901px)");
@@ -137,8 +208,12 @@ export function NavRail() {
           </button>
         </div>
 
-        <nav className="rail__nav" aria-label="Sections">
-          <NavLinks active={current} />
+        <nav className="rail__nav" aria-label="Sections" ref={navRef}>
+          <span className="rail__track" aria-hidden="true">
+            <span className="rail__track-fill" />
+          </span>
+          <span className="rail__marker" aria-hidden="true" />
+          <NavLinks active={current} ports />
         </nav>
       </aside>
 

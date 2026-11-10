@@ -36,7 +36,44 @@
 }
 
 .rail__nav {
+  position: relative;
   margin-block: auto;
+}
+
+.rail__track {
+  position: absolute;
+  inset: 0 auto 0 4px;
+  width: 1px;
+  background: var(--line);
+}
+
+.rail__track-fill {
+  position: absolute;
+  inset: 0;
+  width: 1px;
+  background: var(--amber);
+  transform: scaleY(var(--progress, 0));
+  transform-origin: top;
+  transition: transform 120ms linear;
+}
+
+.rail__marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--amber);
+  opacity: 0;
+  transform: translateY(var(--marker-y, 0px)) translateY(-50%);
+  transition:
+    transform 220ms var(--ease-out),
+    opacity 160ms var(--ease-out);
+}
+
+.rail__nav.has-active .rail__marker {
+  opacity: 1;
 }
 
 .rail__list {
@@ -45,11 +82,36 @@
 }
 
 .rail__link {
+  position: relative;
   display: block;
-  padding: 8px 0;
+  padding: 8px 0 8px 18px;
   border-top: 1px solid transparent;
   color: var(--ink-soft);
   transition: color 160ms ease;
+}
+
+.rail__port {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: var(--paper);
+  transform: translateY(-50%);
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    opacity var(--dur-fast) var(--ease-out);
+}
+
+.rail__link:hover .rail__port,
+.rail__link:focus-visible .rail__port {
+  border-color: var(--ink-soft);
+}
+
+.rail__link.is-active .rail__port {
+  opacity: 0;
 }
 
 .rail__label {
@@ -124,6 +186,20 @@
   padding: 18px 0;
   border-top: 1px solid var(--line);
   color: var(--ink);
+  animation: menu-item-in 260ms var(--ease-out) both;
+  animation-delay: calc(60ms + var(--i, 0) * 40ms);
+}
+
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .menu .rail__link:last-child {

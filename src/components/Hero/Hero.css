@@ -125,9 +125,11 @@
   letter-spacing: 0.04em;
 }
 
-.hero__circuit {
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
+.hero__console {
+  padding: clamp(16px, 2.2vw, 24px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-2);
 }
 
 .hero__circuit-head {
@@ -235,8 +237,8 @@
     font-size: 0.64rem;
   }
 
-  .hero__circuit {
-    padding-top: 12px;
+  .hero__console {
+    padding: 12px;
   }
 
   .hero__circuit-head {

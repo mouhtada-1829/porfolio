@@ -31,6 +31,9 @@
   --dur-fast: 140ms;
   --dur-base: 200ms;
   --dur-slow: 320ms;
+  --dur-signal: 460ms;
+  --dur-wire: 820ms;
+  --lamp-cycle: 3400ms;
 
   --shell: 1360px;
   --rail: 200px;

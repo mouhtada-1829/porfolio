@@ -22,10 +22,10 @@ export function Security() {
         </div>
 
         <div className="security__grid">
-          {securityLayers.map((layer) => (
-            <article className="layer" key={layer.title}>
+          {securityLayers.map((layer, index) => (
+            <article className="layer" key={layer.title} style={{ "--i": index }}>
               <div className="layer__top">
-                <span className="status-led layer__led" aria-hidden="true" />
+                <span className="status-led layer__led is-live" aria-hidden="true" />
                 <h3 className="layer__title">{layer.title}</h3>
               </div>
               <p className="layer__lead">{layer.lead}</p>

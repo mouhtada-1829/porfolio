@@ -187,6 +187,22 @@ video {
   background: currentColor;
 }
 
+.status-led.is-live {
+  animation: lamp-breathe var(--lamp-cycle) var(--ease-in-out) infinite;
+  animation-delay: var(--lamp-delay, 0ms);
+}
+
+@keyframes lamp-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

@@ -55,6 +55,18 @@
 .timeline__item:first-child .timeline__node {
   border-color: var(--amber);
   background: var(--amber);
+  animation: node-live 3600ms var(--ease-in-out) infinite;
+}
+
+@keyframes node-live {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
 }
 
 .timeline__period {
