@@ -33,7 +33,11 @@
   --dur-slow: 320ms;
   --dur-signal: 460ms;
   --dur-wire: 820ms;
+  --dur-reveal: 760ms;
+  --dur-curtain: 640ms;
   --lamp-cycle: 3400ms;
+
+  --ease-expo: cubic-bezier(0.87, 0, 0.13, 1);
 
   --shell: 1360px;
   --rail: 200px;

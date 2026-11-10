@@ -25,8 +25,26 @@
 }
 
 .layer {
+  position: relative;
   padding: 20px 20px 20px 0;
   border-top: 1px solid rgba(232, 228, 219, 0.22);
+}
+
+.layer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms var(--ease-out);
+}
+
+.layer:hover::before {
+  transform: scaleX(1);
 }
 
 .layer + .layer {

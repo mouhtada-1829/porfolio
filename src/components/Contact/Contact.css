@@ -11,12 +11,31 @@
 }
 
 .contact__link {
+  position: relative;
   display: grid;
   grid-template-columns: 24px minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
-  padding: 20px 0;
+  padding: 20px 0 20px 16px;
   transition: background-color 160ms ease;
+}
+
+.contact__link::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: 0;
+  width: 1px;
+  background: var(--amber);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 220ms var(--ease-out);
+}
+
+.contact__link:hover::before,
+.contact__link:focus-visible::before {
+  transform: scaleY(1);
 }
 
 .contact__link:hover,

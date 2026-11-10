@@ -8,7 +8,7 @@ export function Hero() {
     <section className="hero" id="top" aria-labelledby="hero-title">
       <div className="wrap hero__inner">
         <div className="hero__top">
-          <div className="hero__plate">
+          <div className="hero__plate" data-parallax="34">
             <h1 className="hero__name" id="hero-title">
               <span>{profile.firstName}</span>
               <span>{profile.lastName}</span>
@@ -32,7 +32,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="hero__console">
+        <div className="hero__console" data-parallax="14">
           <div className="hero__circuit-head">
             <span className="label">Senguichet — circuit produit</span>
             <span className="hero__circuit-line mono">Du paiement à la validation</span>

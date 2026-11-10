@@ -35,17 +35,21 @@ export function Contact() {
     >
       <div className="wrap">
         <div className="section-head contact__head">
-          <h2 className="section-title" id="contact-title">
+          <h2 className="section-title" id="contact-title" data-reveal="soft">
             Brancher le circuit
           </h2>
-          <p className="lede">
+          <p className="lede" data-reveal="soft" style={{ "--reveal-i": 1 }}>
             Disponible pour un stage ou une alternance — Dakar, Sénégal.
           </p>
         </div>
 
         <ul className="contact__links">
-          {links.map((link) => (
-            <li key={link.label}>
+          {links.map((link, index) => (
+            <li
+              key={link.label}
+              data-reveal
+              style={{ "--reveal-i": Math.min(index, 3) }}
+            >
               <a
                 className="contact__link"
                 href={link.href}
@@ -68,7 +72,7 @@ export function Contact() {
           ))}
         </ul>
 
-        <div className="contact__foot">
+        <div className="contact__foot" data-reveal style={{ "--reveal-i": 3 }}>
           <p className="contact__meta mono">
             {profile.location} · {profile.year}
           </p>

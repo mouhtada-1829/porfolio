@@ -258,3 +258,18 @@ export const education = [
     place: "Dakar",
   },
 ];
+
+export const tickerItems = [
+  "Laravel",
+  "PHP",
+  "React",
+  "API REST",
+  "Flutter",
+  "Next.js",
+  "FastAPI",
+  "MySQL",
+  "PostgreSQL",
+  "Docker",
+  "Linux",
+  "Git",
+];

@@ -32,6 +32,7 @@ function NavLinks({ active, onNavigate, ports = false }) {
               className={`rail__link${isActive ? " is-active" : ""}`}
               href={`#${item.id}`}
               aria-current={isActive ? "location" : undefined}
+              data-num={String(index + 1).padStart(2, "0")}
               onClick={onNavigate}
             >
               {ports ? <span className="rail__port" aria-hidden="true" /> : null}
@@ -46,13 +47,29 @@ function NavLinks({ active, onNavigate, ports = false }) {
 
 export function NavRail() {
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
   const navRef = useRef(null);
+  const closeTimer = useRef(0);
   const active = useActiveSection(SECTION_IDS);
   const current = active === "senguichet" ? "projets" : active;
 
-  const closeMenu = () => setOpen(false);
+  const openMenu = () => {
+    setClosing(false);
+    setOpen(true);
+  };
+
+  const closeMenu = useCallback(() => {
+    window.clearTimeout(closeTimer.current);
+    setClosing(true);
+    closeTimer.current = window.setTimeout(() => {
+      setOpen(false);
+      setClosing(false);
+    }, 300);
+  }, []);
+
+  useEffect(() => () => window.clearTimeout(closeTimer.current), []);
 
   const syncMarker = useCallback(() => {
     const navEl = navRef.current;
@@ -150,7 +167,7 @@ export function NavRail() {
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
-        setOpen(false);
+        closeMenu();
         return;
       }
 
@@ -188,7 +205,7 @@ export function NavRail() {
         previous.focus();
       }
     };
-  }, [open]);
+  }, [open, closeMenu]);
 
   return (
     <>
@@ -201,9 +218,12 @@ export function NavRail() {
             type="button"
             aria-expanded={open}
             aria-controls="mobile-menu"
-            onClick={() => setOpen(true)}
+            onClick={openMenu}
           >
-            <Icon name="menu" size={20} />
+            <span className="rail__toggle-icon" aria-hidden="true">
+              <span />
+              <span />
+            </span>
             <span className="sr-only">Ouvrir le menu</span>
           </button>
         </div>
@@ -220,7 +240,7 @@ export function NavRail() {
       {open ? (
         <div
           id="mobile-menu"
-          className="menu"
+          className={`menu${closing ? " is-closing" : ""}`}
           role="dialog"
           aria-modal="true"
           aria-label="Navigation"

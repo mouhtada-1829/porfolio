@@ -63,6 +63,16 @@
   border: 1px solid var(--green);
   border-radius: 50%;
   color: var(--green);
+  transition:
+    background-color 180ms var(--ease-out),
+    border-color 180ms var(--ease-out),
+    color 180ms var(--ease-out);
+}
+
+.cert:hover .cert__check {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--paper-2);
 }
 
 .cert__main {

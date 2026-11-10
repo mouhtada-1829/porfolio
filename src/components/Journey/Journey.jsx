@@ -4,13 +4,20 @@ import "./Journey.css";
 function Timeline({ title, entries, variant }) {
   return (
     <div className="journey__column">
-      <h3 className="journey__title mono">{title}</h3>
+      <h3 className="journey__title mono" data-reveal>
+        {title}
+      </h3>
       <ol className="timeline">
-        {entries.map((entry) => {
+        {entries.map((entry, index) => {
           const heading = variant === "experience" ? entry.role : entry.title;
 
           return (
-            <li className="timeline__item" key={`${entry.period}-${heading}`}>
+            <li
+              className="timeline__item"
+              key={`${entry.period}-${heading}`}
+              data-reveal
+              style={{ "--reveal-i": Math.min(index, 4) }}
+            >
               <span className="timeline__node" aria-hidden="true" />
               <span className="timeline__period mono">{entry.period}</span>
               <span className="timeline__role">{heading}</span>
@@ -33,10 +40,10 @@ export function Journey() {
     <section className="section journey" id="parcours" aria-labelledby="parcours-title">
       <div className="wrap">
         <div className="section-head journey__head">
-          <h2 className="section-title" id="parcours-title">
+          <h2 className="section-title" id="parcours-title" data-reveal="soft">
             Parcours
           </h2>
-          <p className="lede">
+          <p className="lede" data-reveal="soft" style={{ "--reveal-i": 1 }}>
             Formation et expérience, dans l'ordre du terrain.
           </p>
         </div>

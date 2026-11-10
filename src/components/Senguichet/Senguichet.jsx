@@ -15,19 +15,21 @@ export function Senguichet() {
       <div className="wrap">
         <div className="section-head senguichet__head">
           <div className="senguichet__heading">
-            <h2 className="section-title" id="senguichet-title">
+            <h2 className="section-title" id="senguichet-title" data-reveal="soft">
               Senguichet
             </h2>
-            <p className="lede">{flagship.title}</p>
+            <p className="lede" data-reveal="soft" style={{ "--reveal-i": 1 }}>
+              {flagship.title}
+            </p>
           </div>
-          <span className="senguichet__status">
+          <span className="senguichet__status" data-reveal style={{ "--reveal-i": 2 }}>
             <span className="status-led is-live" aria-hidden="true" />
             {flagship.status} · {flagship.year}
           </span>
         </div>
 
         <div className="senguichet__main">
-          <div className="senguichet__story">
+          <div className="senguichet__story" data-reveal>
             <p className="senguichet__context">{flagship.context}</p>
             <p className="senguichet__role">{flagship.role}</p>
 
@@ -50,18 +52,18 @@ export function Senguichet() {
             </ul>
           </div>
 
-          <div className="senguichet__demo">
+          <div className="senguichet__demo" data-reveal style={{ "--reveal-i": 1 }}>
             <VideoFrame video={demo} featured />
           </div>
         </div>
 
-        <div className="senguichet__secondary">
+        <div className="senguichet__secondary" data-reveal>
           <div className="senguichet__mobile">
             <VideoFrame video={mobile} portrait />
           </div>
         </div>
 
-        <div className="senguichet__foot">
+        <div className="senguichet__foot" data-reveal>
           <a className="link senguichet__contact" href="#contact">
             Discuter du projet
             <Icon name="arrowRight" size={16} />

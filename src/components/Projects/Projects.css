@@ -19,8 +19,75 @@
   text-transform: uppercase;
 }
 
+.projects__stage {
+  position: relative;
+}
+
 .projects__list {
   border-bottom: 1px solid var(--line);
+}
+
+.projects__probe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(var(--probe-x, 0px), var(--probe-y, 0px), 0)
+    translate(-18px, calc(-100% - 16px));
+  transition: opacity 140ms var(--ease-out);
+  will-change: transform;
+}
+
+.projects__probe.is-on {
+  opacity: 1;
+}
+
+.projects__probe-card {
+  display: grid;
+  gap: 3px;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+  transform: scale(0.97);
+  transform-origin: bottom left;
+  transition: transform 180ms var(--ease-out);
+}
+
+.projects__probe.is-on .projects__probe-card {
+  transform: scale(1);
+}
+
+.projects__probe-index {
+  color: var(--amber);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+}
+
+.projects__probe-name {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.projects__probe-stack {
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects__probe {
+    display: block;
+  }
 }
 
 .projects__list li + li {
@@ -56,14 +123,14 @@
 .project__link::after {
   content: "";
   position: absolute;
-  top: 12px;
-  bottom: 12px;
-  left: 12px;
-  width: 1px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
   background: var(--amber);
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 180ms var(--ease-out);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--ease-expo);
 }
 
 .project__link:hover,
@@ -79,7 +146,7 @@
 
 .project__link:hover::after,
 .project__link:focus-visible::after {
-  transform: scaleY(1);
+  transform: scaleX(1);
 }
 
 .project__link--static {
